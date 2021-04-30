@@ -1,0 +1,7 @@
+{
+  "name": "exp-app",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,44 @@
+<ion-header  [translucent]="true">
+  <ion-toolbar class="header">
+    <ion-title color="light">
+      WORK EXPERIENCE CALCULATOR
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content" [forceOverscroll]="false" [fullscreen]="false">
+  <div [formGroup]="formGroup" class="card">
+<div class="main-sec">
+  <div class="dot"></div>
+  <div class="ping">
+    <div class="rec">
+      <ion-icon name="calendar"></ion-icon>  <ion-datetime (ionChange)="calculate()" formControlName="startDate" placeholder="Select first working day" displayFormat="DD/MM/YYYY" display-timezone="utc"></ion-datetime>
+    </div>
+  </div>
+</div>
+
+  <div class="main-sec">
+    <div class="dot"></div>
+    <div class="ping">
+      <div class="rec">
+        <ion-icon name="calendar"></ion-icon>  <ion-datetime (ionChange)="calculate()" formControlName="endDate" placeholder="Select last working day" displayFormat="DD/MM/YYYY" display-timezone="utc"></ion-datetime>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div *ngIf="formGroup.valid" class="output">
+    <h3>Your Experience</h3>
+    <div class="years">
+      <h1>{{year}}</h1>
+      <h2>Years</h2>
+    </div>
+    <div class="months">
+      <h1>{{month}}</h1>
+      <h2>Months</h2>
+    </div>
+  </div>
+<div class="shape">
+  <button (click)="formGroup.reset()" class="round-btn"><ion-icon name="refresh"></ion-icon></button>
+  <img src="../../assets/shape.png" alt="">
+</div>
+</ion-content>
