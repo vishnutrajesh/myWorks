@@ -1,0 +1,76 @@
+<div class="section vh-100 d-flex">
+  <div class="m-auto col-8 offset-2 sign-up-card">
+    <div class="row">
+      <div class="col-lg-5 align-self-stretch d-none d-sm-block reg-bg position-relative">
+        <div class="gradient-sheet"></div>
+          <div class="d-flex text-center flex-column justify-content-between">
+              <h1 class="mb-4 font-weight-bold text-primary">FrameIt!</h1>
+              <img src="../../assets/img/svgImg.svg" alt="icon" class="img-fluid mt-4">
+          </div>
+      </div>
+      <div class="col-lg-7 col-sm-12 pr-lg-0 pl-lg-5">
+        <div class="d-flex">
+          <div class="m-auto">
+            <form (ngSubmit)="submit()" class="row" [formGroup]="regForm">
+                <div class="form-group col-md-6">
+                  <label *ngIf="!(regFormControls.firstName.invalid && (regFormControls.firstName.touched || regFormControls.firstName.dirty))">First Name</label>
+                  <div *ngIf="regFormControls.firstName.invalid && (regFormControls.firstName.touched || regFormControls.firstName.dirty)" class="error-tip border-danger text-white">First name is required</div>
+                  <input [ngClass]="{'is-invalid': regFormControls.firstName.invalid && (regFormControls.firstName.touched || regFormControls.firstName.dirty)}" formControlName="firstName" type="text" class="form-control">
+                </div>
+              <div class="form-group col-md-6">
+                <label *ngIf="!(regFormControls.lastName.invalid && (regFormControls.lastName.touched || regFormControls.lastName.dirty))">Last Name</label>
+                <div *ngIf="regFormControls.lastName.invalid && (regFormControls.lastName.touched || regFormControls.lastName.dirty)" class="error-tip border-danger text-white">Last name is required</div>
+                <input [ngClass]="{'is-invalid': regFormControls.lastName.invalid && (regFormControls.lastName.touched || regFormControls.lastName.dirty)}" formControlName="lastName" type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-6">
+                <label *ngIf="!(regFormControls.email.invalid && (regFormControls.email.touched || regFormControls.email.dirty))">Email</label>
+                <div *ngIf="regFormControls.email.invalid && (regFormControls.email.touched || regFormControls.email.dirty)" class="error-tip border-danger text-white">
+                  <ng-container *ngIf="regFormControls.email.errors.required">Email is required</ng-container>
+                  <ng-container *ngIf="regFormControls.email.errors.email">Invalid Email</ng-container>
+                </div>
+                <input [ngClass]="{'is-invalid': regFormControls.email.invalid && (regFormControls.email.touched || regFormControls.email.dirty)}" formControlName="email" type="text" class="form-control">
+              </div>
+              <div class="form-group col-md-6">
+                <label *ngIf="!(regFormControls.phone.invalid && (regFormControls.phone.touched || regFormControls.phone.dirty))">Phone</label>
+                <div *ngIf="regFormControls.phone.invalid && (regFormControls.phone.touched || regFormControls.phone.dirty)" class="error-tip border-danger text-white">
+                  <ng-container *ngIf="regFormControls.phone.errors.required">Phone is required</ng-container>
+                </div>
+                <div class="phone-prefix">
+                  <span>+91</span>
+                <input [ngClass]="{'is-invalid': regFormControls.phone.invalid && (regFormControls.phone.touched || regFormControls.phone.dirty)}" formControlName="phone" type="text" class="form-control">
+              </div>
+              </div>
+              <div class="form-group col-md-12">
+                <label *ngIf="!(regFormControls.password.invalid && (regFormControls.password.touched || regFormControls.password.dirty))">Password</label>
+                <div *ngIf="regFormControls.password.invalid && (regFormControls.password.touched || regFormControls.password.dirty)" class="error-tip border-danger text-white">
+                  <ng-container *ngIf="regFormControls.password.errors.required">Password is required</ng-container>
+                </div>
+                <div class="show-password">
+                  <a *ngIf="!(regFormControls.password.invalid && (regFormControls.password.touched || regFormControls.password.dirty))" (click)="showPassword = !showPassword">
+                  <i *ngIf="!showPassword" class="fa fa-eye"></i>
+                  <i *ngIf="showPassword" class="fa fa-eye-slash"></i>
+                  </a>
+                <input [ngClass]="{'is-invalid': regFormControls.password.invalid && (regFormControls.password.touched || regFormControls.password.dirty)}" formControlName="password" [type]="showPassword? 'text':'password'" autocomplete="new-password" class="form-control">
+                </div>
+              </div>
+              <div class="form-group col-md-8">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                  <label class="form-check-label" for="defaultCheck1">
+                    <small>
+                    I agree to all <span class="text-primary font-weight-bold">Term</span>, <span class="text-primary font-weight-bold">Privacy Policy</span> and <span class="text-primary font-weight-bold">Fees</span>
+                    </small>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group col-md-6">
+                <button type="submit" class="btn btn-primary shadow-sm w-100">Create Account</button>
+                <h6 class="mt-4">Have an account? <a class="btn-link">Login</a></h6>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
