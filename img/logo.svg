@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="62.962" height="75.059" viewBox="0 0 62.962 75.059">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#90cbfb"/>
+      <stop offset="1" stop-color="#106"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#106"/>
+      <stop offset="1" stop-color="#90cbfb"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" y2="1.828" xlink:href="#linear-gradient-2"/>
+  </defs>
+  <g id="logo" transform="translate(-308.019 -264.941)">
+    <rect id="Rectangle_8" data-name="Rectangle 8" width="17.863" height="49.894" rx="8.932" transform="matrix(0.819, 0.574, -0.574, 0.819, 356.348, 264.941)" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_9" data-name="Rectangle 9" width="17.863" height="49.894" rx="8.932" transform="matrix(0.819, -0.574, 0.574, 0.819, 308.019, 275.188)" fill="url(#linear-gradient-2)"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="9.5" cy="9.5" r="9.5" transform="translate(330 321)" fill="url(#linear-gradient-3)"/>
+  </g>
+</svg>
