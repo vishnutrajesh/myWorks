@@ -1,0 +1,115 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body
+{
+    height: 100vh;
+    background-color: #070305;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+}
+.container h1{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    font-weight: 900;
+    margin-bottom: 10%;
+    color: white;
+    letter-spacing: 40px;
+}
+.notify{
+    width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    text-align: center;
+}
+.notify label{
+    color: #d26f83;
+    display: block;
+    margin-bottom: 15px;
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.5;
+}
+.input-group{
+    width: 100%;
+    display: flex;
+}
+.input-group input{
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    height: 45px;
+    width: 70%;
+    border: none;
+    background-color: #17040b;
+    padding-left: 1.5rem;
+    color: white;
+    letter-spacing: 2px;
+}
+.input-group input:focus-visible{
+    box-shadow: none;
+    border: none;
+    outline: 0;
+}
+.input-group .my-btn{
+    margin-left: -25px;
+    border-radius: 25px;
+    height: 45px;
+    display: flex;
+    justify-content: center;align-items: center;
+    width: 30%;
+    border: none;
+    background-color: #2B2036;
+    color: white;
+    letter-spacing: 2px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    font-size: 10px;
+}
+.my-btn:hover{
+    box-shadow: 0 0 18px 1px rgba(255, 125, 150 , 0.4);
+}
+.logo{
+    color: white;
+    font-weight: 300;
+    letter-spacing: 4px;
+    margin-left: 2rem;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: auto;
+    font-size: 12px;
+}
+@media (max-width: 767.98px) {
+    .notify{
+        width: 80%;
+        margin-bottom: auto;
+    }
+    h1{
+        width: 80%;
+        text-align: center;
+        letter-spacing: 2px;
+        margin-bottom: auto !important;
+    }
+}
