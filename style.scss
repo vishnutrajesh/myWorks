@@ -1,0 +1,207 @@
+@import "scss/functions";
+@import "scss/variables";
+@import "scss/mixins/breakpoints";
+.left{
+  padding: 1rem;
+  overflow: hidden;
+}
+.right{
+  padding: 1rem;
+}
+.main-block{
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  height: calc(100vh - 2rem);
+  border-radius: 1rem;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(249,250,255,1) 100%);
+  @include media-breakpoint-down(sm) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  nav{
+    margin-top: 1rem;
+    .form-control{
+      opacity: 0;
+      animation-direction: reverse;
+      animation: grow 1s cubic-bezier(0.01, 0.96, 0.73, 1.26) forwards;
+      width: 0;
+    }
+    .navbar-nav{
+      li{
+        margin-left: 1rem;
+        margin-right: 1rem;
+        a{
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .content-block{
+    align-self: center;
+    .text-container{
+      span{
+        font-weight: 500;
+        color: orange;
+        font-size: 1rem;
+        display: block;
+        margin-bottom: 1rem;
+      }
+      h1{
+        font-weight: 900;
+        color: #18134B;
+        //text-shadow: 1px 6px 8px rgb(0 0 0 / 14%);
+      }
+      p{
+        margin: 2rem 0;
+        color: #A9A8B0;
+      }
+      .try-now{
+        background-color: white;
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 5px;
+        @include media-breakpoint-down(sm) {
+          width: 100%;
+        }
+        input{
+          border: none;
+          background-color: white;
+          height: 50px;
+          width: calc(100% - 100px);
+          padding-left: 1.5rem;
+          &:focus, &:focus-visible{
+            border: none !important;
+            box-shadow: none;
+          }
+        }
+        .btn-smart{
+          height: 50px;
+          width: 100px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #7133FF;
+          color: white;
+        }
+      }
+    }
+  }
+}
+.carousel{
+  background: rgb(5,2,38);
+  display: flex;
+  flex-direction: column;
+  background: url("./img/abstract.svg"), linear-gradient(0deg, rgba(5,2,38,1) 0%, rgba(24,19,75,1) 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: color;
+  border-radius: 1rem;
+  height: 100%;
+  transition: background-position 1.5s ease-in-out;
+  .slider-container{
+    width: 100%;
+    padding-left: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
+@include media-breakpoint-down(md) {
+  padding: 2rem;
+}
+  }
+  .slider{
+    .glide__track{
+      .glide__slides{
+        .glide__slide{
+          &.glide__slide--active{
+            opacity: 1;
+          }
+          img{
+            width: 100% !important;
+          }
+        }
+      }
+    }
+  }
+  .btn-light{
+    &:last-child{
+      background-color: rgba(255,255,255,0.2);
+      border: none;
+      color: white;
+    }
+  }
+}
+.glide__bullets{
+  position: static;
+  display: flex;
+  align-items: center;
+  transform: none;
+  .glide__bullet{
+    border: 1px solid rgba(255,255,255,0.4);
+    background-color: transparent;
+    &.glide__bullet--active{
+      background-color: rgba(255,255,255,1) !important;
+    }
+  }
+}
+.btn-round{
+  border: 2px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.2);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+@keyframes grow {
+  to{
+    opacity: 1;
+    width: 100%;
+  }
+}
+.spread-icons{
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  animation: breath 2.5s ease-in-out infinite;
+  i{
+    position: absolute !important;
+    color: #7133ff;
+    &:first-child{
+      right: 20%;
+      top: 35%;
+    }
+    &:nth-child(2){
+      left: 10%;
+      top: 15%;
+    }
+    &:nth-child(3) {
+      left: 50%;
+      top: 50%;
+    }
+    &:nth-child(4) {
+      bottom: 5%;
+      right: 30%;
+    }
+    &:last-child{
+      left: 5%;
+      bottom: 5%;
+    }
+  }
+}
+@keyframes breath {
+  0%{
+    transform: translateY(0);
+  }
+  50%{
+    transform: translateY(10px);;
+  }
+  100%{
+    transform: translateY(0);
+  }
+}

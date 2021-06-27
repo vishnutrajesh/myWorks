@@ -1,0 +1,204 @@
+.left {
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.right {
+  padding: 1rem;
+}
+
+.main-block {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  box-sizing: border-box;
+  height: calc(100vh - 2rem);
+  border-radius: 1rem;
+  background: white;
+  background: linear-gradient(0deg, white 0%, #f9faff 100%);
+}
+@media (max-width: 767.98px) {
+  .main-block {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+.main-block nav {
+  margin-top: 1rem;
+}
+.main-block nav .form-control {
+  opacity: 0;
+  animation-direction: reverse;
+  animation: grow 1s cubic-bezier(0.01, 0.96, 0.73, 1.26) forwards;
+  width: 0;
+}
+.main-block nav .navbar-nav li {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.main-block nav .navbar-nav li a {
+  font-weight: 500;
+}
+.main-block .content-block {
+  align-self: center;
+}
+.main-block .content-block .text-container span {
+  font-weight: 500;
+  color: orange;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+.main-block .content-block .text-container h1 {
+  font-weight: 900;
+  color: #18134B;
+}
+.main-block .content-block .text-container p {
+  margin: 2rem 0;
+  color: #A9A8B0;
+}
+.main-block .content-block .text-container .try-now {
+  background-color: white;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+@media (max-width: 767.98px) {
+  .main-block .content-block .text-container .try-now {
+    width: 100%;
+  }
+}
+.main-block .content-block .text-container .try-now input {
+  border: none;
+  background-color: white;
+  height: 50px;
+  width: calc(100% - 100px);
+  padding-left: 1.5rem;
+}
+.main-block .content-block .text-container .try-now input:focus, .main-block .content-block .text-container .try-now input:focus-visible {
+  border: none !important;
+  box-shadow: none;
+}
+.main-block .content-block .text-container .try-now .btn-smart {
+  height: 50px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7133FF;
+  color: white;
+}
+
+.carousel {
+  background: #050226;
+  display: flex;
+  flex-direction: column;
+  background: url("./img/abstract.svg"), linear-gradient(0deg, #050226 0%, #18134b 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: color;
+  border-radius: 1rem;
+  height: 100%;
+  transition: background-position 1.5s ease-in-out;
+}
+.carousel .slider-container {
+  width: 100%;
+  padding-left: 2rem;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+@media (max-width: 991.98px) {
+  .carousel .slider-container {
+    padding: 2rem;
+  }
+}
+.carousel .slider .glide__track .glide__slides .glide__slide.glide__slide--active {
+  opacity: 1;
+}
+.carousel .slider .glide__track .glide__slides .glide__slide img {
+  width: 100% !important;
+}
+.carousel .btn-light:last-child {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+}
+
+.glide__bullets {
+  position: static;
+  display: flex;
+  align-items: center;
+  transform: none;
+}
+.glide__bullets .glide__bullet {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: transparent;
+}
+.glide__bullets .glide__bullet.glide__bullet--active {
+  background-color: white !important;
+}
+
+.btn-round {
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5rem;
+}
+
+@keyframes grow {
+  to {
+    opacity: 1;
+    width: 100%;
+  }
+}
+.spread-icons {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  animation: breath 2.5s ease-in-out infinite;
+}
+.spread-icons i {
+  position: absolute !important;
+  color: #7133ff;
+}
+.spread-icons i:first-child {
+  right: 20%;
+  top: 35%;
+}
+.spread-icons i:nth-child(2) {
+  left: 10%;
+  top: 15%;
+}
+.spread-icons i:nth-child(3) {
+  left: 50%;
+  top: 50%;
+}
+.spread-icons i:nth-child(4) {
+  bottom: 5%;
+  right: 30%;
+}
+.spread-icons i:last-child {
+  left: 5%;
+  bottom: 5%;
+}
+
+@keyframes breath {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
