@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <clipPath id="clip-Web_1920_1">
+      <rect width="1920" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
+    <rect width="1920" height="1080" fill="#fff"/>
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="1920" height="1080" fill="#fff"/>
+    <g id="Group_2" data-name="Group 2">
+      <path id="Path_1" data-name="Path 1" d="M597.433,246.361S729.176,216.466,962.448,521.1,1321.2,713.291,1505.65,814.44,1635.432,1123,1635.432,1123h-1038Z" transform="translate(-744 10)" fill="#4428bd" stroke="#707070" stroke-width="1"/>
+      <path id="Path_4" data-name="Path 4" d="M597.433,246.361S729.176,216.466,962.448,521.1,1321.2,713.291,1505.65,814.44,1635.432,1123,1635.432,1123h-1038Z" transform="translate(-744 10)" fill="#4428bd" stroke="#707070" stroke-width="1"/>
+      <circle id="Ellipse_1" data-name="Ellipse 1" cx="186" cy="186" r="186" transform="translate(1709 862)" fill="#ffdd6b"/>
+      <circle id="Ellipse_2" data-name="Ellipse 2" cx="45" cy="45" r="45" transform="translate(1706 875)" fill="#fe9000"/>
+      <g id="Group_1" data-name="Group 1">
+        <path id="Path_2" data-name="Path 2" d="M226.607,822.5l57.5-8.713s-27.01-52.712,8.713-80.157S399.555,754.105,427,704.007s15.247-141.582-24.4-170.77-92.355,58.375-134.176,54.019-10.455-63.167-33.108-71.445-57.5,38.336-57.5,38.336Z" transform="translate(-227 310)" fill="none" stroke="rgba(255,255,255,0.49)" stroke-linejoin="round" stroke-width="2"/>
+        <path id="Path_3" data-name="Path 3" d="M665.273,746.876s-154.908,95.434-89.9,114.8S807.733,770.389,835.395,802.2s-154.908,189.485-78.837,221.3,265.556,53.941,266.939,94.051S940.511,712.3,940.511,712.3Z" fill="none" stroke="rgba(255,255,255,0.45)" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

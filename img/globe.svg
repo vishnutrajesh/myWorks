@@ -1,0 +1,19 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1481 900">
+<defs><style>.cls-1{fill:#fef9e5;overflow:hidden}.cls-2{fill:none;stroke:#ffd85a;stroke-miterlimit:10;}</style></defs>
+<title>globe</title>
+<circle class="cls-1" cx="1181" cy="300" r="300">
+<path class="cls-2" d="M947,26c20.09-14.95,74-16,85-53s89,23,62,44-64,73-35,102,30,156-36,134-71,67-97,44-35-113,0-155S885.59,71.68,947,26Z" transform="translate(0 132)">
+<animateTransform attributeName="transform"
+                    type="rotate"
+                    from="0" to="360"
+                    begin="0s" dur="10s"
+                    repeatCount="indefinite"
+          />
+</path>
+</circle>
+<circle class="cls-1" cx="5" cy="895" r="5"/>
+<circle class="cls-1" cx="5" cy="137" r="5"/>
+<circle class="cls-1" cx="1361" cy="895" r="5"/>
+<path class="cls-2" d="M1109.34,414.63c-15.56-17.33-27.17-70-57.93-74.91s-.08-90.83,21.54-67.69,69.16,51.18,85.73,18.19,114.38-54,110.63,14.12,65.93,59,53.39,88.09-80.19,52.12-119.62,24.46S1156.91,467.58,1109.34,414.63Z" transform="translate(0 132)"/>
+<path class="cls-2" d="M1199,57c3.4-23.75,38.3-64.71,21.13-94.51s74-53.2,70-20.75,6,90.46,44.27,85.66,122.87,68.5,64.74,105.06-2.62,92.19-35,98.24-97.76-39.68-102.39-90.36S1188.62,129.6,1199,57Z" transform="translate(0 132)"/>
+</svg>
