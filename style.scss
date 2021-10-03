@@ -13,9 +13,11 @@ $sc: #4224c4;
     //scroll-snap-points-y: repeat(100vh);
     scroll-snap-type: y mandatory;
 }
-body{
+html, body{
     margin:0;
     padding:0;
+    width: 100%;
+    overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
 }
 section, header{
@@ -23,6 +25,12 @@ section, header{
     h2{
         font-size: 2rem;
         font-weight: 600;
+    }
+    @include media-breakpoint-down(xs) {
+        height: 100% !important;
+    }
+    @include media-breakpoint-only(lg) {
+        height: 850px !important;
     }
 }
 .reset-opacity{
@@ -72,6 +80,15 @@ header{
             opacity: 0.1;
             border-radius: 50%;
             z-index: -1;
+        }
+    }
+    .col-xl-8.col-md-8{
+        @include media-breakpoint-only(lg) {
+            height: 567px;
+        }
+        @include media-breakpoint-only(sm) {
+            height: 660px;
+            margin-top: 40px;
         }
     }
 }
@@ -659,6 +676,9 @@ section.download {
     }
 }
 footer.final-sec {
+    @include media-breakpoint-only(lg) {
+        background-position: center 150% !important;
+    }
     .mango{
         width: 50px;
         position: absolute;
@@ -674,7 +694,12 @@ footer.final-sec {
     background-repeat: no-repeat;
     transition: all 2s ease-in-out;
     &.animate{
-        background-position: center center !important;
+        @include media-breakpoint-up(xl) {
+            background-position: center center !important;
+        }
+        @include media-breakpoint-only(lg) {
+            background-position: center bottom !important;
+        }
     }
 }
 @keyframes fruit-rotate {

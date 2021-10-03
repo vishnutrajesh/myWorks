@@ -9939,15 +9939,27 @@ h3 {
   scroll-snap-type: y mandatory;
 }
 
-body {
+html, body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
 
 section h2, header h2 {
   font-size: 2rem;
   font-weight: 600;
+}
+@media (max-width: 575.98px) {
+  section, header {
+    height: 100% !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  section, header {
+    height: 850px !important;
+  }
 }
 
 .reset-opacity {
@@ -10005,6 +10017,17 @@ header .floating-banana:after {
   opacity: 0.1;
   border-radius: 50%;
   z-index: -1;
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  header .col-xl-8.col-md-8 {
+    height: 567px;
+  }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+  header .col-xl-8.col-md-8 {
+    height: 660px;
+    margin-top: 40px;
+  }
 }
 
 nav {
@@ -10402,25 +10425,25 @@ section.quality .week-card .bars {
   justify-content: space-around;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(1):after {
-  height: 13.0247752906%;
+  height: 95.6637700803%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(2):after {
-  height: 53.3299896773%;
+  height: 75.0480962707%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(3):after {
-  height: 53.3200002849%;
+  height: 34.1020787137%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(4):after {
-  height: 17.3573870556%;
+  height: 58.3224554487%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(5):after {
-  height: 67.5436460286%;
+  height: 71.5844233574%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(6):after {
-  height: 23.2154470033%;
+  height: 72.0995575231%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(7):after {
-  height: 82.6583688647%;
+  height: 96.5240937213%;
 }
 section.quality .week-card .bars .bar {
   width: 10px;
@@ -10638,6 +10661,11 @@ footer.final-sec {
   background-repeat: no-repeat;
   transition: all 2s ease-in-out;
 }
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  footer.final-sec {
+    background-position: center 150% !important;
+  }
+}
 footer.final-sec .mango {
   width: 50px;
   position: absolute;
@@ -10645,8 +10673,15 @@ footer.final-sec .mango {
   left: 5%;
   top: 35%;
 }
-footer.final-sec.animate {
-  background-position: center center !important;
+@media (min-width: 1200px) {
+  footer.final-sec.animate {
+    background-position: center center !important;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  footer.final-sec.animate {
+    background-position: center bottom !important;
+  }
 }
 
 @keyframes fruit-rotate {
