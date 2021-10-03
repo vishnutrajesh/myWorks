@@ -3,20 +3,15 @@
         el: document.querySelector('[data-scroll-container]'),
         smooth: true
     });
-})();
-window.addEventListener('load', function(){
-    new Glider(document.querySelector('.slider'), {
+     new Glider(document.querySelector('.slider'), {
         slidesToShow: 1,
+        slidesToScroll: 'auto',
+        scrollLock: true,
         draggable: true,
         arrows: {
-            prev: '.prev',
-            next: '.next'
-        },
-        rewind: true,
-        dragVelocity: 4.5,
+            next: document.querySelector('.next'),
+            prev: document.querySelector('.prev')
+        }
     });
-    document.querySelector('.slider').addEventListener('glider-slide-visible', function(event){
-       const slide = document.querySelector('ul.slide li');
-       slide.classList.add('animate')
-    });
-})
+})();
+

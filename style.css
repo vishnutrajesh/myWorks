@@ -9947,6 +9947,25 @@ html, body {
   font-family: "Montserrat", sans-serif;
 }
 
+.navbar-toggler {
+  z-index: 999999;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    z-index: 99999;
+  }
+  .navbar-collapse ul li {
+    padding: 0 2rem;
+  }
+  .navbar-collapse ul li a {
+    color: white !important;
+    padding: 1rem;
+  }
+}
+
 section h2, header h2 {
   font-size: 2rem;
   font-weight: 600;
@@ -10158,6 +10177,11 @@ nav .sec-menu .btn-round:hover {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
+@media (max-width: 575.98px) {
+  .graphics-1 .video {
+    top: 15%;
+  }
+}
 .graphics-1 .video.animate {
   -moz-animation: popup-deep 0.5s cubic-bezier(0.75, 0.43, 0.21, 1.22) 0.1s forwards;
   /* Firefox */
@@ -10318,6 +10342,11 @@ section.hiw .orders-card .list .avatar {
 section.hiw .orders-card .list .avatar img {
   width: 100%;
 }
+@media (max-width: 575.98px) {
+  section.hiw .col-lg-8.col-sm-11 .w-100.d-flex.justify-content-end {
+    transform: scale(0.7);
+  }
+}
 
 section.quality {
   height: 100vh;
@@ -10425,25 +10454,25 @@ section.quality .week-card .bars {
   justify-content: space-around;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(1):after {
-  height: 95.6637700803%;
+  height: 51.0258765327%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(2):after {
-  height: 75.0480962707%;
+  height: 80.8289915697%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(3):after {
-  height: 34.1020787137%;
+  height: 58.1274250568%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(4):after {
-  height: 58.3224554487%;
+  height: 35.6027629013%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(5):after {
-  height: 71.5844233574%;
+  height: 56.703648684%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(6):after {
-  height: 72.0995575231%;
+  height: 50.5216459601%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(7):after {
-  height: 96.5240937213%;
+  height: 47.2623206688%;
 }
 section.quality .week-card .bars .bar {
   width: 10px;
@@ -10471,6 +10500,11 @@ section.quality .week-card .bars .bar:nth-child(odd):after {
 }
 section.quality .week-card .bars .bar:nth-child(even):after {
   background-color: #f7531e;
+}
+@media (max-width: 575.98px) {
+  section.quality .col-xl-6.col-md-6.order-1.order-md-0 {
+    transform: scale(0.7);
+  }
 }
 
 section.ttt {
@@ -10886,6 +10920,12 @@ footer.final-sec .mango {
 }
 .grid-cards .fruit-card .inner-grid .img3 {
   grid-area: img3;
+}
+@media (max-width: 575.98px) {
+  .grid-cards {
+    transform: rotate(0);
+    margin-top: 4rem;
+  }
 }
 
 @keyframes twistUp {
