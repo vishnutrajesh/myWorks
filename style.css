@@ -10454,25 +10454,25 @@ section.quality .week-card .bars {
   justify-content: space-around;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(1):after {
-  height: 51.0258765327%;
+  height: 10.8665307704%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(2):after {
-  height: 80.8289915697%;
+  height: 99.7892990756%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(3):after {
-  height: 58.1274250568%;
+  height: 24.9672069342%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(4):after {
-  height: 35.6027629013%;
+  height: 74.6125694109%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(5):after {
-  height: 56.703648684%;
+  height: 2.6570345141%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(6):after {
-  height: 50.5216459601%;
+  height: 99.0611383155%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(7):after {
-  height: 47.2623206688%;
+  height: 89.5652915883%;
 }
 section.quality .week-card .bars .bar {
   width: 10px;
@@ -10694,6 +10694,36 @@ footer.final-sec {
   background-position: bottom center;
   background-repeat: no-repeat;
   transition: all 2s ease-in-out;
+}
+footer.final-sec h2 {
+  font-weight: bold;
+}
+footer.final-sec .input-group {
+  height: 45px;
+  border-radius: 10px;
+}
+footer.final-sec .input-group input {
+  height: 100%;
+  border: none;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+footer.final-sec .input-group input:focus {
+  box-shadow: none;
+}
+footer.final-sec .input-group .input-group-append {
+  height: 100%;
+}
+footer.final-sec .input-group .input-group-append button {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #f7531e;
+  color: white;
+  border: none;
+  width: 150px;
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   footer.final-sec {

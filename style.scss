@@ -710,6 +710,36 @@ section.download {
     }
 }
 footer.final-sec {
+    h2{
+        font-weight: bold;
+    }
+    .input-group{
+        height: 45px;
+        border-radius: 10px;
+        input{
+            height: 100%;
+            border: none;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            &:focus{
+                box-shadow: none;
+            }
+        }
+        .input-group-append{
+            height: 100%;
+            button{
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                background-color: $pc;
+                color: white;
+                border: none;
+                width: 150px;
+            }
+        }
+    }
     @include media-breakpoint-only(lg) {
         background-position: center 150% !important;
     }
