@@ -46,10 +46,15 @@ section, header{
         font-weight: 600;
     }
     @include media-breakpoint-down(xs) {
-        height: 100% !important;
+        height: auto !important;
     }
     @include media-breakpoint-only(lg) {
         height: 850px !important;
+    }
+}
+section{
+    @include media-breakpoint-down(xs) {
+        padding: 2rem 0 !important;
     }
 }
 .reset-opacity{
@@ -743,12 +748,29 @@ footer.final-sec {
     @include media-breakpoint-only(lg) {
         background-position: center 150% !important;
     }
+    .orange-lg{
+        width: 200px;
+        position: absolute;
+        z-index: 999;
+        right: -75px;
+        top: 33%;
+        animation: fruit-rotate 8s ease-in-out infinite;
+    }
+    .mango-lg{
+        width: 120px;
+        position: absolute;
+        z-index: 999;
+        left: 12%;
+        top: 33%;
+        animation: fruit-rotate 8s ease-in-out infinite;
+    }
     .mango{
         width: 50px;
         position: absolute;
         z-index: 999;
         left: 5%;
         top: 35%;
+        animation: fruit-rotate 5s ease-in-out infinite;
     }
     height: 100vh;
     position: relative;
@@ -758,12 +780,7 @@ footer.final-sec {
     background-repeat: no-repeat;
     transition: all 2s ease-in-out;
     &.animate{
-        @include media-breakpoint-up(xl) {
-            background-position: center center !important;
-        }
-        @include media-breakpoint-only(lg) {
-            background-position: center bottom !important;
-        }
+        background-position: center bottom !important;
     }
 }
 @keyframes fruit-rotate {

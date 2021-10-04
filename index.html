@@ -365,16 +365,22 @@
       </section>
 
       <footer data-scroll data-scroll-repeat="true" data-scroll-class="animate" class="final-sec">
-        <div class="mango">
+        <div data-scroll class="mango d-none d-md-block">
           <img class="img-fluid" src="./img/mango.png" alt="">
         </div>
+        <div data-scroll class="mango-lg d-none d-md-block">
+          <img class="img-fluid" src="./img/mango-flipped.png" alt="">
+        </div>
+        <div data-scroll class="orange-lg d-none d-md-block">
+          <img class="img-fluid" src="./img/orange.png" alt="">
+        </div>
         <div class="container d-flex flex-column h-100">
-          <div class="row w-100 m-0 flex-wrap">
+          <div class="row w-100 m-auto flex-wrap">
             <div class="col-12">
               <div class="row w-100 m-auto">
                 <div class="col-xl-6 text-center col-sm-12 offset-xl-3">
                   <h2>Ready for an incredible variety of fruits?</h2>
-                  <div class="input-group mb-3 mt-5 shadow">
+                  <div class="input-group mb-3 mt-5 shadow-lg">
                     <input type="text" class="form-control" placeholder="Enter your email" aria-label="Recipient's username" aria-describedby="button-addon2">
                     <div class="input-group-append">
                       <button class="btn btn-outline-secondary" type="button" id="button-addon2">Subscribe</button>
@@ -384,10 +390,28 @@
               </div>
             </div>
           </div>
-          <div class="row m-0 align-self-end mb-5 mt-auto">
-            <div class="col-xl-6">
-              <h5>Follow Tropicana</h5>
-
+          <div class="row w-100 m-0 align-self-end mb-3 mt-auto">
+            <div class="col-xl-4 d-flex flex-column align-self-stretch">
+              <h5 class="text-white">Follow Tropicana</h5>
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link text-white active" href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#"><i class="fab fa-facebook"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+              </ul>
+              <small class="text-white mt-auto">Copyright © Tropicana. All rights reserved.</small>
+            </div>
+            <div class="col-xl-4 offset-xl-4">
+              <h6>Support</h6>
+              <h4 class="font-weight-bold">+7766799996</h4>
+              <small class="d-block mt-4">Weekdays: 8:00 - 21:00</small>
+              <small class="d-block mt-2">Weekends: 9:00 - 16:00</small>
+              <small class="d-block mt-2"><a class="text-dark btn-link" href="mailto:support@tropicana.com">support@tropicana.com</a></small>
             </div>
           </div>
         </div>

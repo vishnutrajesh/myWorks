@@ -9972,12 +9972,18 @@ section h2, header h2 {
 }
 @media (max-width: 575.98px) {
   section, header {
-    height: 100% !important;
+    height: auto !important;
   }
 }
 @media (min-width: 992px) and (max-width: 1199.98px) {
   section, header {
     height: 850px !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  section {
+    padding: 2rem 0 !important;
   }
 }
 
@@ -10454,25 +10460,25 @@ section.quality .week-card .bars {
   justify-content: space-around;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(1):after {
-  height: 10.8665307704%;
+  height: 10.4351769665%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(2):after {
-  height: 99.7892990756%;
+  height: 38.5095670222%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(3):after {
-  height: 24.9672069342%;
+  height: 3.2163542022%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(4):after {
-  height: 74.6125694109%;
+  height: 65.4741528342%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(5):after {
-  height: 2.6570345141%;
+  height: 67.2892981286%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(6):after {
-  height: 99.0611383155%;
+  height: 87.0471983569%;
 }
 section.quality .week-card .bars.bar-anim .bar:nth-child(7):after {
-  height: 89.5652915883%;
+  height: 81.7946719855%;
 }
 section.quality .week-card .bars .bar {
   width: 10px;
@@ -10730,22 +10736,32 @@ footer.final-sec .input-group .input-group-append button {
     background-position: center 150% !important;
   }
 }
+footer.final-sec .orange-lg {
+  width: 200px;
+  position: absolute;
+  z-index: 999;
+  right: -75px;
+  top: 33%;
+  animation: fruit-rotate 8s ease-in-out infinite;
+}
+footer.final-sec .mango-lg {
+  width: 120px;
+  position: absolute;
+  z-index: 999;
+  left: 12%;
+  top: 33%;
+  animation: fruit-rotate 8s ease-in-out infinite;
+}
 footer.final-sec .mango {
   width: 50px;
   position: absolute;
   z-index: 999;
   left: 5%;
   top: 35%;
+  animation: fruit-rotate 5s ease-in-out infinite;
 }
-@media (min-width: 1200px) {
-  footer.final-sec.animate {
-    background-position: center center !important;
-  }
-}
-@media (min-width: 992px) and (max-width: 1199.98px) {
-  footer.final-sec.animate {
-    background-position: center bottom !important;
-  }
+footer.final-sec.animate {
+  background-position: center bottom !important;
 }
 
 @keyframes fruit-rotate {
