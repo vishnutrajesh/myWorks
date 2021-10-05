@@ -6,7 +6,7 @@
 <!--  </div>-->
 <!--</div>-->
 <div class="drop-zone-container shadow-lg">
-  <div class="drop-zone">
+  <div [ngClass]="{'invalid': invalidImg}" class="drop-zone">
     <input #files class="d-none" type="file" multiple />
     <div class="m-auto text-center">
       <figure class="mb-2">
@@ -21,16 +21,17 @@
     </div>
   </div>
   <ng-container *ngIf="this.imageList.length > 0">
-  <div *ngFor="let fileList of imageList; let i = index" class="file-card d-flex flex-wrap align-items-center">
+  <div [ngClass]="{'invalid': invalidFile(fileList)}" *ngFor="let fileList of imageList; let i = index" class="file-card d-flex flex-wrap align-items-center">
     <div class="me-auto">
-    <h6 class="m-0">Uploading...</h6>
-      <small [ngClass]="{'animate': fileList}">{{percentage}}% - {{seconds}} Seconds left</small>
+      <h6 *ngIf="invalidFile(fileList)" class="m-0 error"><img class="shadow me-2" width="20px" src="../../assets/invalid.svg" alt=""> This file is not an image</h6>
+    <h6 *ngIf="!invalidFile(fileList)" class="mb-1">Uploading...</h6>
+      <small *ngIf="!invalidFile(fileList)" [ngClass]="{'animate': fileList}">{{percentage}}% - {{seconds}} Seconds left</small>
     </div>
     <div class="ms-auto d-flex">
-      <div class="pause"><i class="fas fa-pause"></i></div>
-      <div (click)="removeFile(i)" class="delete ms-4"><i class="fas fa-times"></i></div>
+      <div *ngIf="!invalidFile(fileList)" class="pause"><i class="fas fa-pause"></i></div>
+      <div (click)="removeFile(i)" class="delete ms-2"><i class="fas fa-times"></i></div>
     </div>
-    <div class="w-100">
+    <div *ngIf="!invalidFile(fileList)" class="w-100">
       <div class="progress-file-bar"></div>
     </div>
   </div>

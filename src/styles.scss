@@ -104,6 +104,12 @@ html, body{
     overflow: hidden;
     margin-top: 1rem;
     position: relative;
+    &.invalid{
+      background-color: #FFE7EA;
+      &:before{
+        display: none;
+      }
+    }
     .ms-auto, .me-auto{
       position: relative;
       z-index: 10;
@@ -114,12 +120,17 @@ html, body{
       transform: translateY(20px);
       opacity: 0;
       display: block;
+      font-size: 12px;
       &.animate{
         animation: fadeInUp 0.5s ease-in-out forwards;
       }
     }
     h6{
       color: #226A94;
+      &.error{
+        color: #FF003A;
+        font-weight: 400;
+      }
     }
     .pause, .delete{
       width: 35px;
@@ -132,9 +143,6 @@ html, body{
       cursor: pointer;
       &:hover{
         transform: scale(1.2);
-        .fas{
-          font-size: 14px;
-        }
       }
     }
     .pause{

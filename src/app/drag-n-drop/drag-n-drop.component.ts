@@ -20,6 +20,7 @@ export class DragNDropComponent implements ControlValueAccessor {
   isDisabled: boolean | undefined;
   @Output() dropEvent: EventEmitter<any> = new EventEmitter<any>();
   private file: FileList[] = [];
+  invalidImg: boolean;
 
   constructor(private host: ElementRef<HTMLInputElement>) { }
 
@@ -111,4 +112,21 @@ export class DragNDropComponent implements ControlValueAccessor {
     this.change(this.imageList);
   }
 
+  // getFormat(format: any) {
+  //   let png: boolean = false;
+  //   switch (format.type) {
+  //     case 'image/png': {
+  //       png = true;
+  //     }
+  //   }
+  //   if (format.type === 'image/png' || format.type === 'image/jpeg' || format.type === 'image/jpg') {
+  //     this.invalidImg = true;
+  //   } else {
+  //     this.invalidImg = false;
+  //   }
+  // }
+
+  invalidFile(fileList: any): boolean {
+    return fileList.type !== 'image/png' && fileList.type !== 'image/jpeg' && fileList.type !== 'image/jpg'
+  }
 }
