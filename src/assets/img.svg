@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="41" height="54" viewBox="0 0 41 54">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_35" data-name="Rectangle 35" width="41" height="54" rx="3" transform="translate(-3797 33)" fill="#edf5ff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="-0.007" y1="-0.044" x2="0.226" y2="0.64" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#9acaff"/>
+      <stop offset="1" stop-color="#69aefb"/>
+    </linearGradient>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_34" data-name="Rectangle 34" width="41" height="54" rx="3" transform="translate(-3718 17)" fill="#edf5ff"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="0.108" y1="0.156" x2="0.964" y2="1.031" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3a9cff"/>
+      <stop offset="1" stop-color="#0075ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#238dff"/>
+      <stop offset="1" stop-color="#8dc4ff"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_25" data-name="Group 25" transform="translate(3742 -1)">
+    <rect id="Rectangle_31" data-name="Rectangle 31" width="41" height="54" rx="3" transform="translate(-3742 1)" fill="#edf5ff"/>
+    <g id="Mask_Group_6" data-name="Mask Group 6" transform="translate(55 -32)" clip-path="url(#clip-path)">
+      <rect id="Rectangle_36" data-name="Rectangle 36" width="40" height="36" rx="5" transform="matrix(0.788, 0.616, -0.616, 0.788, -3791.707, 67.037)" fill="url(#linear-gradient)"/>
+    </g>
+    <g id="Mask_Group_5" data-name="Mask Group 5" transform="translate(-24 -16)" clip-path="url(#clip-path-2)">
+      <rect id="Rectangle_33" data-name="Rectangle 33" width="40" height="36" rx="5" transform="matrix(0.788, 0.616, -0.616, 0.788, -3696.707, 44.037)" fill="url(#linear-gradient-2)"/>
+    </g>
+    <circle id="Ellipse_9" data-name="Ellipse 9" cx="5" cy="5" r="5" transform="translate(-3735 16)" fill="url(#linear-gradient-3)"/>
+  </g>
+</svg>

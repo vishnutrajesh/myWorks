@@ -1,0 +1,38 @@
+<!--<div class="container vh-100">-->
+<!--  <div class="d-flex h-100">-->
+<!--    <div class="col-xl-4 col-md-5 col-xl-4 col-sm-10">-->
+<!--      -->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="drop-zone-container shadow-lg">
+  <div class="drop-zone">
+    <input #files class="d-none" type="file" multiple />
+    <div class="m-auto text-center">
+      <figure class="mb-2">
+        <div class="img-wrapper">
+        <img class="behind-img" src="./assets/img.svg" alt="img">
+        <img class="in-front-img" src="./assets/img.svg" alt="img">
+        <img class="behind-img" src="./assets/img.svg" alt="img">
+        </div>
+      </figure>
+      <h5>Drop your images <a (click)="files.click()" href="javascript:void(0)">here</a></h5>
+      <small class="text-muted">Supports: JPG, JPEG, PNG</small>
+    </div>
+  </div>
+  <ng-container *ngIf="this.imageList.length > 0">
+  <div *ngFor="let fileList of imageList; let i = index" class="file-card d-flex flex-wrap align-items-center">
+    <div class="me-auto">
+    <h6 class="m-0">Uploading...</h6>
+      <small [ngClass]="{'animate': fileList}">{{percentage}}% - {{seconds}} Seconds left</small>
+    </div>
+    <div class="ms-auto d-flex">
+      <div class="pause"><i class="fas fa-pause"></i></div>
+      <div (click)="removeFile(i)" class="delete ms-4"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="w-100">
+      <div class="progress-file-bar"></div>
+    </div>
+  </div>
+  </ng-container>
+</div>

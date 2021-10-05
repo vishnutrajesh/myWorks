@@ -1,1 +1,199 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap";
+@import "~@fortawesome/fontawesome-free/css/all.css";
+$primary: #228BFF;
+html, body{
+  font-family: 'Rubik', sans-serif !important;
+}
+.vh-100{
+  height: 100vh;
+}
+.border-dashed{
+  .drop-zone-container{
+    .drop-zone{
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='15' ry='15' stroke='%23DFDFDF' stroke-width='2' stroke-dasharray='7%2c 7%2c7' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+      border-radius: 15px;
+    }
+  }
+}
+.on-drop-hover{
+  .drop-zone-container{
+    .drop-zone{
+      background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='%23E3F1FF' rx='15' ry='15' stroke='%233A9CFF' stroke-width='3' stroke-dasharray='7%2c 7%2c7' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+      border-radius: 15px;
+      figure{
+        .img-wrapper{
+          .in-front-img{
+            transform: translateY(-10px)
+          }
+          .behind-img {
+            &:first-child{
+              transform: translateX(-9px) rotate(-40deg);
+            }
+            &:last-child{
+              transform: translateX(19px) rotate(40deg);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.drop-zone-container{
+  width: 100%;
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.3s ease-in-out;
+  .drop-zone{
+    display: flex;
+    height: 200px;
+    width: 100%;
+    small{
+      font-size: 0.8rem;
+    }
+    h5{
+      font-size: 1.2rem;
+      margin: 0;
+      color: #226A94;
+      a{
+        text-decoration: none;
+        color: $primary;
+      }
+    }
+    figure {
+      display: block;
+      .img-wrapper {
+        position: relative;
+        height: 65px;
+        width: 50px;
+        margin: auto;
+        .behind-img {
+          width: 40px;
+          position: absolute;
+          margin: auto;
+          z-index: 1;
+          display: block;
+          transition: all 0.3s ease-in-out;
+          bottom: 0;
+          filter: grayscale(100%);
+          opacity: 0.5;
+          &:first-child{
+            transform-origin: bottom left;
+          }
+          &:last-child{
+            transform-origin: bottom right;
+          }
+        }
+
+        .in-front-img {
+          width: 50px;
+          position: absolute;
+          margin: auto;
+          z-index: 10;
+          display: block;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+  .file-card{
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    border: 1.5px solid #efefef;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-top: 1rem;
+    position: relative;
+    .ms-auto, .me-auto{
+      position: relative;
+      z-index: 10;
+    }
+    small{
+      color: #cbcbcb;
+      font-weight: 300;
+      transform: translateY(20px);
+      opacity: 0;
+      display: block;
+      &.animate{
+        animation: fadeInUp 0.5s ease-in-out forwards;
+      }
+    }
+    h6{
+      color: #226A94;
+    }
+    .pause, .delete{
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.2s ease-in-out;
+      cursor: pointer;
+      &:hover{
+        transform: scale(1.2);
+        .fas{
+          font-size: 14px;
+        }
+      }
+    }
+    .pause{
+      background-color: #EFF3F6;
+      color: #A9C0D1;
+    }
+    .delete{
+      background-color: #FFE7EA;
+      color: #FF003A;
+    }
+    .progress-file-bar{
+      display: block;
+      width: 0;
+      height: 2px;
+      background-color: $primary;
+      border-radius: 2px;
+      animation: progress-bar 1.8s ease-in-out forwards;
+      position: relative;
+      z-index: 10;
+    }
+    &:before{
+      content: '';
+      z-index: 1;
+      display: block;
+      position: absolute;
+      width: 0;
+      height: 100%;
+      left: 0;
+      top: 0;
+      animation: progress;
+      animation-timing-function: ease-in;
+      animation-duration: 2s;
+      animation-delay: 0.5s;
+      background-color: #F6FAFD;
+    }
+  }
+}
+@keyframes progress {
+  to{
+    width: 100%;
+  }
+}
+@keyframes fadeInUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes progress-bar {
+  0%{
+    width: 0;
+    transform: translateX(0);
+  }
+  50%{
+    width: 100%;
+    transform: translateX(0);
+  }
+  100%{
+    width: 100%;
+    transform: translateX(120%);
+  }
+}
