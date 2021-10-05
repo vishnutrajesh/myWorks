@@ -41,8 +41,8 @@ html, body{
 }
 .drop-zone-container{
   width: 100%;
-  border-radius: 20px;
-  padding: 2rem;
+  border-radius: 25px;
+  padding: 1.5rem;
   transition: all 0.3s ease-in-out;
   .drop-zone{
     display: flex;
@@ -159,12 +159,13 @@ html, body{
       height: 2px;
       background-color: $primary;
       border-radius: 2px;
-      animation: progress-bar 1.8s ease-in-out forwards;
       position: relative;
       z-index: 10;
+      &.animated{
+        animation: progress-bar 0.3s ease-in forwards;
+      }
     }
-    &:before{
-      content: '';
+    .bg-progress{
       z-index: 1;
       display: block;
       position: absolute;
@@ -172,10 +173,6 @@ html, body{
       height: 100%;
       left: 0;
       top: 0;
-      animation: progress;
-      animation-timing-function: ease-in;
-      animation-duration: 2s;
-      animation-delay: 0.5s;
       background-color: #F6FAFD;
     }
   }
@@ -192,16 +189,7 @@ html, body{
   }
 }
 @keyframes progress-bar {
-  0%{
-    width: 0;
-    transform: translateX(0);
-  }
-  50%{
-    width: 100%;
-    transform: translateX(0);
-  }
-  100%{
-    width: 100%;
+  to{
     transform: translateX(120%);
   }
 }

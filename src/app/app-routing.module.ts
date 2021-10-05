@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {DragNDropComponent} from "./drag-n-drop/drag-n-drop.component";
+import {FileUploadComponent} from "./file-upload/file-upload.component";
 
 const routes: Routes = [
-  {path: 'drag-n-drop', component: DragNDropComponent }
+  {path: 'file-upload', component: FileUploadComponent }
 ];
 
 @NgModule({

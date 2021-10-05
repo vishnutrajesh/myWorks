@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, forwardRef, HostBinding, HostListener, Output} from '@angular/core';
+import {Component, ElementRef, EventEmitter, forwardRef, HostBinding, HostListener, Input, Output} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
 
 @Component({
@@ -14,9 +14,23 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
   ],
 })
 export class DragNDropComponent implements ControlValueAccessor {
+  @Input() set percentageUploaded(data: any) {
+    if (data) {
+      this.percentage = data;
+      console.log('data', data)
+    }
+  }
+  @Input() set dataTransfered(data: any) {
+    if (data) {
+      this.dataInfo = data;
+      console.log('dataInfo', data)
+    }
+  }
   imageList: any = [];
+  percentage: any = [];
   change= (event: any) => {};
   touched: any;
+  dataInfo: any = [];
   isDisabled: boolean | undefined;
   @Output() dropEvent: EventEmitter<any> = new EventEmitter<any>();
   private file: FileList[] = [];
@@ -62,7 +76,6 @@ export class DragNDropComponent implements ControlValueAccessor {
   }
 
   // Drop Event
-  percentage: number= 0;
   seconds: number = 0;
   @HostListener('drop', ['$event'])
   public drop(event: any) {
@@ -125,6 +138,9 @@ export class DragNDropComponent implements ControlValueAccessor {
   //     this.invalidImg = false;
   //   }
   // }
+  decimalAvoid(val: any) {
+    return Number(val).toFixed();
+  }
 
   invalidFile(fileList: any): boolean {
     return fileList.type !== 'image/png' && fileList.type !== 'image/jpeg' && fileList.type !== 'image/jpg'

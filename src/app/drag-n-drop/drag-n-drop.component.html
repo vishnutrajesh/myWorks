@@ -21,19 +21,24 @@
     </div>
   </div>
   <ng-container *ngIf="this.imageList.length > 0">
-  <div [ngClass]="{'invalid': invalidFile(fileList)}" *ngFor="let fileList of imageList; let i = index" class="file-card d-flex flex-wrap align-items-center">
+    <ng-container *ngFor="let fileList of imageList; let i = index">
+  <div *ngIf="percentage[i] | async as pct" [ngClass]="{'invalid': invalidFile(fileList)}" class="file-card d-flex flex-wrap align-items-center">
     <div class="me-auto">
       <h6 *ngIf="invalidFile(fileList)" class="m-0 error"><img class="shadow me-2" width="20px" src="../../assets/invalid.svg" alt=""> This file is not an image</h6>
-    <h6 *ngIf="!invalidFile(fileList)" class="mb-1">Uploading...</h6>
-      <small *ngIf="!invalidFile(fileList)" [ngClass]="{'animate': fileList}">{{percentage}}% - {{seconds}} Seconds left</small>
+    <h6 *ngIf="!invalidFile(fileList)" class="mb-1">
+      <span [innerText]="pct === 100? 'Completed': 'Uploading...'"></span>
+    </h6>
+      <small *ngIf="!invalidFile(fileList)" [ngClass]="{'animate': fileList}">{{decimalAvoid(pct)}}%</small>
     </div>
     <div class="ms-auto d-flex">
-      <div *ngIf="!invalidFile(fileList)" class="pause"><i class="fas fa-pause"></i></div>
+      <div [hidden]="pct === 100" *ngIf="!invalidFile(fileList)" class="pause"><i class="fas fa-pause"></i></div>
       <div (click)="removeFile(i)" class="delete ms-2"><i class="fas fa-times"></i></div>
     </div>
     <div *ngIf="!invalidFile(fileList)" class="w-100">
-      <div class="progress-file-bar"></div>
+      <div [ngClass]="{'animated': pct === 100}" [style.width]="pct + '%'" class="progress-file-bar"></div>
     </div>
+    <div [style.width]="pct + '%'" class="bg-progress"></div>
   </div>
+    </ng-container>
   </ng-container>
 </div>
