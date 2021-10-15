@@ -41,8 +41,6 @@ html, body{
 }
 .drop-zone-container{
   width: 100%;
-  border-radius: 25px;
-  padding: 1.5rem;
   transition: all 0.3s ease-in-out;
   .drop-zone{
     display: flex;
@@ -96,84 +94,153 @@ html, body{
       }
     }
   }
-  .file-card{
-    padding: 1rem 1.5rem;
-    box-sizing: border-box;
-    border: 1.5px solid #efefef;
-    border-radius: 15px;
-    overflow: hidden;
-    margin-top: 1rem;
+}
+
+.file-card{
+  padding: 1rem 1.5rem;
+  box-sizing: border-box;
+  border: 1.5px solid #efefef;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-top: 1rem;
+  position: relative;
+  background-color: white;
+  .preview{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
     position: relative;
-    &.invalid{
-      background-color: #FFE7EA;
-      &:before{
-        display: none;
+    z-index: 99;
+    margin-right: 10px;
+    transform: translateX(-20px);
+    opacity: 0;
+    background-color: #A9C0D1;
+    &.animated{
+      animation: fadeInRight 0.5s ease-in forwards;
+    }
+  }
+  .loader{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    animation-duration: 1.8s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #fafafa 8%, #edf5ff 38%, #fafafa 54%);
+    background-size: 1000px 640px;
+    border-radius: 15px;
+  }
+  &.invalid{
+    background-color: #FFE7EA;
+    transition: max-height 0.3s ease-out;
+    max-height: 150px;
+    &.remove{
+      max-height: 0;
+    }
+    &:before{
+      display: none;
+    }
+  }
+  .me-auto{
+    &.error{
+      h6{
+        color: #f1adb2;
+        font-weight: 400;
+        margin: 0;
+      }
+      small{
+        display: block;
+        transform: none;
+        color: #FF003A;
+        font-weight: 700;
+        opacity: 1;
       }
     }
-    .ms-auto, .me-auto{
-      position: relative;
-      z-index: 10;
+  }
+  .ms-auto, .me-auto{
+    position: relative;
+    z-index: 10;
+  }
+  small{
+    color: #cbcbcb;
+    font-weight: 300;
+    transform: translateY(20px);
+    opacity: 0;
+    display: block;
+    font-size: 12px;
+    &.animate{
+      animation: fadeInUp 0.5s ease-in-out forwards;
     }
-    small{
-      color: #cbcbcb;
-      font-weight: 300;
+  }
+  h6{
+    color: #226A94;
+  }
+  .pause, .delete{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    &.animated{
+      animation: fadeOutDown 0.5 ease-in;
+    }
+    &:hover{
+      transform: scale(1.2);
+    }
+  }
+  .pause{
+    background-color: #EFF3F6;
+    color: #A9C0D1;
+    position: relative;
+    z-index: 100;
+    &.bg-white{
       transform: translateY(20px);
       opacity: 0;
-      display: block;
-      font-size: 12px;
-      &.animate{
+      &.animated{
         animation: fadeInUp 0.5s ease-in-out forwards;
       }
     }
-    h6{
-      color: #226A94;
-      &.error{
-        color: #FF003A;
-        font-weight: 400;
-      }
+  }
+  .delete{
+    background-color: #FFE7EA;
+    color: #FF003A;
+  }
+  .progress-file-bar{
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: $primary;
+    border-radius: 2px;
+    position: relative;
+    z-index: 10;
+    &.animated{
+      animation: progress-bar 0.3s ease-in forwards;
     }
-    .pause, .delete{
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: all 0.2s ease-in-out;
-      cursor: pointer;
-      &:hover{
-        transform: scale(1.2);
-      }
-    }
-    .pause{
-      background-color: #EFF3F6;
-      color: #A9C0D1;
-    }
-    .delete{
-      background-color: #FFE7EA;
-      color: #FF003A;
-    }
-    .progress-file-bar{
-      display: block;
-      width: 0;
-      height: 2px;
-      background-color: $primary;
-      border-radius: 2px;
-      position: relative;
-      z-index: 10;
-      &.animated{
-        animation: progress-bar 0.3s ease-in forwards;
-      }
-    }
-    .bg-progress{
-      z-index: 1;
-      display: block;
-      position: absolute;
-      width: 0;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background-color: #F6FAFD;
+  }
+  .bg-progress{
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #F6FAFD;
+    box-sizing: border-box;
+    border: 2px solid #F6FAFD;
+    &.completed{
+      border: 2px solid white;
+      border-radius: 15px;
     }
   }
 }
@@ -188,8 +255,28 @@ html, body{
     opacity: 1;
   }
 }
+@keyframes fadeOutDown {
+  to {
+    transform: translateY(20);
+    opacity: 0;
+  }
+}
+@keyframes fadeInRight {
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 @keyframes progress-bar {
   to{
     transform: translateX(120%);
+  }
+}
+@keyframes placeHolderShimmer{
+  0%{
+    background-position: -468px 0
+  }
+  100%{
+    background-position: 468px 0
   }
 }

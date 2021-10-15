@@ -1,7 +1,10 @@
 <div class="container pt-4 pb-4 d-flex vh-100">
   <div class="col-12 col-xl-6 col-sm-12 m-auto">
-    <form [formGroup]="imageUpload">
-    <app-drag-n-drop [dataTransfered]="snapshot" [percentageUploaded]="percentage" (drop)="uploadFiles()" (change)="uploadFiles()" formControlName="files"></app-drag-n-drop>
+    <form class="file-upload shadow" [formGroup]="imageUpload">
+    <app-drag-n-drop (drop)="uploadFiles()" (change)="uploadFiles()" formControlName="files"></app-drag-n-drop>
+      <ng-container *ngFor="let file of this.imageUpload.get('files')?.value">
+        <app-file-card [file]="file"></app-file-card>
+      </ng-container>
     </form>
   </div>
 </div>

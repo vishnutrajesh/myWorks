@@ -1,0 +1,41 @@
+   <div [style.height.px]="!(percentage$ | async) ? '75': 'auto'" [ngClass]="{'invalid': invalidFile(file)}" class="file-card d-flex flex-wrap align-items-center">
+     <div *ngIf="!(percentage$ | async) && !invalidFile(file)" class="loader"></div>
+     <ng-container *ngIf="invalidFile(file)">
+       <img class="shadow me-3" width="30px" src="../../assets/invalid.svg" alt="">
+       <div class="me-auto error">
+       <h6 class="m-0"> This file is not an image</h6>
+         <small>{{this.file.name}}</small>
+       </div>
+     </ng-container>
+     <ng-container *ngIf="percentage$ | async as pct">
+     <ng-container *ngIf="!invalidFile(file)">
+       <ng-container *ngIf="downloadURL as url">
+       <div [ngClass]="{'animated': url}" [style.background-image]="'url('+ url + ')'" class="preview">
+       </div>
+       </ng-container>
+      <div class="me-auto">
+        <h6 class="mb-1">
+            <span *ngIf="pct  < 100">Uploading</span>
+          <span *ngIf="pct === 100">Completed</span>
+        </h6>
+        <small [ngClass]="{'animate': file}">
+          {{decimalAvoid(pct)}}% - <ng-container *ngIf="snapshot | async as snap">{{humanFileSize(snap?.bytesTransferred)}}  of  {{humanFileSize(snap?.totalBytes)}}</ng-container></small>
+      </div>
+      <div class="ms-auto d-flex">
+        <ng-container *ngIf="snapshot | async as snap">
+        <div (click)="task.pause()" [hidden]="pct === 100 " class="pause"><i class="fas fa-pause"></i></div>
+        <div (click)="task.resume()" [hidden]="pct === 100" class="pause"><i class="fas fa-pause"></i></div>
+        <ng-container *ngIf="downloadURL as url">
+        <div [ngClass]="{'animated': url}" class="pause bg-white shadow"><a target="_blank" [href]="url"><i class="fas fa-long-arrow-alt-down"></i></a></div>
+        </ng-container>
+        <div (click)="task.cancel()" [hidden]="pct === 100" class="delete ms-2"><i class="fas fa-times"></i></div>
+        </ng-container>
+      </div>
+      <div class="w-100">
+        <div [ngClass]="{'animated': pct === 100}" [style.width]="pct + '%'" class="progress-file-bar"></div>
+      </div>
+      <div [ngClass]="{'completed': pct === 100}" [style.width]="pct + '%'" class="bg-progress"></div>
+     </ng-container>
+     </ng-container>
+    </div>
+

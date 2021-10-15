@@ -14,27 +14,12 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
   ],
 })
 export class DragNDropComponent implements ControlValueAccessor {
-  @Input() set percentageUploaded(data: any) {
-    if (data) {
-      this.percentage = data;
-      console.log('data', data)
-    }
-  }
-  @Input() set dataTransfered(data: any) {
-    if (data) {
-      this.dataInfo = data;
-      console.log('dataInfo', data)
-    }
-  }
   imageList: any = [];
-  percentage: any = [];
   change= (event: any) => {};
   touched: any;
-  dataInfo: any = [];
   isDisabled: boolean | undefined;
   @Output() dropEvent: EventEmitter<any> = new EventEmitter<any>();
   private file: FileList[] = [];
-  invalidImg: boolean;
 
   constructor(private host: ElementRef<HTMLInputElement>) { }
 
@@ -123,26 +108,5 @@ export class DragNDropComponent implements ControlValueAccessor {
   removeFile(i: number) {
     this.imageList.splice(i, 1);
     this.change(this.imageList);
-  }
-
-  // getFormat(format: any) {
-  //   let png: boolean = false;
-  //   switch (format.type) {
-  //     case 'image/png': {
-  //       png = true;
-  //     }
-  //   }
-  //   if (format.type === 'image/png' || format.type === 'image/jpeg' || format.type === 'image/jpg') {
-  //     this.invalidImg = true;
-  //   } else {
-  //     this.invalidImg = false;
-  //   }
-  // }
-  decimalAvoid(val: any) {
-    return Number(val).toFixed();
-  }
-
-  invalidFile(fileList: any): boolean {
-    return fileList.type !== 'image/png' && fileList.type !== 'image/jpeg' && fileList.type !== 'image/jpg'
   }
 }

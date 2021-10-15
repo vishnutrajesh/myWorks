@@ -8,12 +8,14 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {AngularFireModule} from "@angular/fire/compat";
 import {AngularFireStorageModule} from "@angular/fire/compat/storage";
+import { FileCardComponent } from './file-card/file-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DragNDropComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    FileCardComponent
   ],
     imports: [
         BrowserModule,
