@@ -1,0 +1,76 @@
+.chart-sec{
+  background-color: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  .d-flex.bg-light.border-bottom.align-items-center.flex-wrap{
+    background-image: url("../../assets/covid.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 10;
+    *{
+      color: white;
+      border-color: white;
+    }
+    &:after{
+      content: '';
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: rgb(232,232,232);
+      background: linear-gradient(90deg, #7191b6 0%, #9f98b1 50%, rgba(255, 255, 255, 0) 100%);
+      z-index: -1;
+    }
+  }
+}
+.sm-card{
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding: 2rem;
+  height: 30%;
+  color: white;
+  background-image: url("../../assets/covid.jpg");
+  background-size: cover;
+  background-position: bottom center;
+  position: relative;
+  z-index: 10;
+  &:after{
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(113,145,182, 0.95);
+    z-index: -1;
+  }
+}
+.nav{
+  li{
+    a{
+      transition: all 0.3s ease-in-out;
+      mat-icon{
+        vertical-align: middle;
+        font-size: 20px;
+      }
+      &.active{
+        border-bottom: 1px solid black !important;
+        color: black !important;
+        mat-icon{
+          color: black !important;
+        }
+      }
+      &:hover{
+        border-bottom: 1px solid black !important;
+        color: black !important;
+        mat-icon{
+          color: black !important;
+        }
+      }
+    }
+  }
+}

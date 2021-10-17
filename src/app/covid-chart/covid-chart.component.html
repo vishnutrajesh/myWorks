@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="row m-0 mt-5">
+    <h1><mat-icon aria-hidden="false" aria-label="Example home icon">coronavirus</mat-icon> Covid 19 Updates</h1>
+    <div class="col-md-10">
+    <div class="chart-sec shadow">
+      <div class="d-flex bg-light border-bottom align-items-center flex-wrap p-5 pb-0 pt-3">
+        <div class="col-11">
+          <h2 class="m-0 mb-2">Deaths reported due to Covid19 in  {{this.country.value}}</h2>
+        </div>
+        <div class="col-1 text-end p-0">
+          <button [matMenuTriggerFor]="menu" mat-icon-button aria-label="Example icon button with a vertical three dot icon">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item>Item 1</button>
+            <button mat-menu-item>Item 2</button>
+          </mat-menu>
+        </div>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Country</mat-label>
+            <input type="text"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="country"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete (optionSelected)="chartChange()" autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of countryList" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+        <ul class="nav ms-auto">
+          <li *ngFor="let link of nav" class="nav-item">
+            <a (click)="switchData(link)" [ngClass]="{'active': link.name === selectedNav}" class="nav-link" href="javascript:void(0)"><mat-icon>{{link.icon}}</mat-icon> {{link.name}}</a>
+          </li>
+        </ul>
+        <h4 class="m-0 ms-auto">2020 - 2021</h4>
+      </div>
+      <div *ngIf="selectedNav === 'Deaths'" echarts [options]="chartOption" [loading]="isLoading" theme="macarons" class="demo-chart"></div>
+      <div *ngIf="selectedNav === 'Vaccination'" class="p-5">
+        <div echarts [options]="barChart" [loading]="isLoading" theme="macarons" class="demo-chart"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-2 d-flex flex-column justify-content-between align-self-lg-stretch">
+       <div class="sm-card shadow">
+         <span class="d-block fw-light text-dark">Total deaths</span>
+         <h1 [matTooltip]="this.total?.deaths" class="fw-bold text-truncate">{{this.total?.deaths}}</h1>
+         <h1 class="m-0 text-center"><mat-icon class="fs-2" aria-hidden="false" aria-label="Example home icon">dangerous</mat-icon></h1>
+       </div>
+
+    <div class="sm-card shadow">
+      <span class="d-block fw-light text-dark">Total confirmed</span>
+      <h1 [matTooltip]="this.total?.confirmed" class="fw-bold text-truncate">{{this.total?.confirmed}}</h1>
+      <h1 class="m-0 text-center"><mat-icon class="fs-2" aria-hidden="false" aria-label="Example home icon">check</mat-icon></h1>
+    </div>
+
+    <div class="sm-card shadow">
+      <span class="d-block fw-light text-dark">Population</span>
+      <h1 [matTooltip]="this.total?.population" class="fw-bold text-truncate">{{this.total?.population}}</h1>
+      <h1 class="m-0 text-center"><mat-icon class="fs-2" aria-hidden="false" aria-label="Example home icon">groups</mat-icon></h1>
+    </div>
+
+
+  </div>
+</div>
+</div>
+
