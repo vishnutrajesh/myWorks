@@ -578,7 +578,19 @@ p {
   padding: 2rem;
 }
 .skill-grid .work-card:first-child {
-  background: url("./img/upload.gif");
+  background: url("./img/drag-n-drop.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.skill-grid .work-card:nth-child(2) {
+  background: url("./img/coming-soon-singularity.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.skill-grid .work-card:nth-child(3) {
+  background: url("./img/covid-chart.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
