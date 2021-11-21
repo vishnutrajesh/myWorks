@@ -585,27 +585,206 @@ $textcolor: #919191;
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   height: 100%;
+  .card-wrapper{
+    &:first-child{
+      .work-card {
+        background: url("./img/drag-n-drop.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+    &:nth-child(2) {
+      .work-card {
+        background: url("./img/coming-soon-singularity.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+    &:nth-child(3) {
+      .work-card {
+        background: url("./img/covid-chart.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+    &:nth-child(4) {
+      .work-card {
+        background: url("./img/scroll-lp.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+    &:nth-child(5) {
+      .work-card {
+        background: url("./img/app-lp.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    }
+  }
   .work-card{
     background-color: white;
     border-radius: 5rem;
     padding: 2rem;
-    &:first-child{
-      background: url("./img/drag-n-drop.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    transition: all 0.3s cubic-bezier(1, 0.04, 0.58, 1);
+    cursor: pointer;
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+    .navigate{
+      cursor: pointer;
+      background-color: #4e62ae;
+      color: white;
+      position: absolute;
+      left: -30px;
+      top: -30px;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+      &.animated{
+        animation: popin 0.3s ease-in-out forwards;
+      }
+      &:hover{
+        background-color: $primary-color;
+      }
     }
-    &:nth-child(2) {
-      background: url("./img/coming-soon-singularity.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+    &:hover{
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
     }
-    &:nth-child(3) {
-      background: url("./img/covid-chart.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+  }
+}
+.my-modal {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 0;
+  display: none;
+  z-index: 1000000;
+  width: 100%;
+  height: 100%;
+  animation: fadeIn 0.5s ease-in-out forwards;
+
+  .work-card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    border-radius: 5rem;
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(1, 0.04, 0.58, 1);
+    cursor: pointer;
+    box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+    &:hover {
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
     }
+  }
+}
+#works{
+  .title{
+    width: 30%;
+    position: absolute;
+    left: 50%;
+    margin-left: -15%;
+    text-align: center;
+    padding: 0.5rem 0;
+    top: 0;
+    background: $skyBlueGradient;
+    border-bottom-right-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+    h6{
+      color: white;
+      margin: 0;
+    }
+  }
+  padding-top: 2rem;
+}
+
+form{
+  .form-group{
+    label{
+      color: $primary-color;
+    }
+    input.form-control{
+      height: 45px;
+    }
+    textarea.form-control{
+      padding: 0.5rem 1rem;
+      height: 120px;
+    }
+    .form-control{
+      border: none;
+      border-radius: 2rem;
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+    }
+    button{
+      border-radius: 2rem;
+      background-color: $primary-color;
+      padding: 0.5rem 1.4rem;
+    }
+  }
+}
+.expand{
+    cursor: pointer;
+    background-color: #4e62ae;
+    color: white;
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    &.animated{
+      animation: popinBottom 0.3s ease-in-out forwards;
+    }
+    &:hover{
+      background-color: $primary-color;
+  }
+}
+.close-btn{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #F01919;
+  color: #F01919;
+  background-color: #FF9494;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 9999999999;
+  transition: all 0.3s ease-in-out;
+  &:hover{
+    background-color: #F01919;
+    color: white;
+  }
+}
+@keyframes popin {
+  to{
+    top: 0;
+    left: 0;
+    opacity: 1;
+  }
+}
+@keyframes popinBottom {
+  to{
+    bottom: 0;
+    right: 0;
+    opacity: 1;
   }
 }
