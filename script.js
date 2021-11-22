@@ -9,6 +9,9 @@ let techUsed = [
     {tech: ['Javascript', 'Bootstrap', 'SCSS | CSS', 'HTML'], resposive: true},
     {tech: ['Javascript', 'Bootstrap', 'SCSS | CSS', 'HTML'], resposive: true},
 ]
+const workDescription = [
+    'Drag and drop image uploader with upload progress bar'
+]
 // const links = nav.getElementsByTagName("a");
 // for (let link of links) {
 //     link.addEventListener('mouseover',() => {
@@ -42,6 +45,20 @@ let bg = ["./img/drag-n-drop.png",
     "./img/covid-chart.png",
     "./img/scroll-lp.png",
     "./img/app-lp.png]"];
+
+window.addEventListener('click', function(e){
+    if (popup[0] === e.target){
+        popup[0].style.display = 'none';
+        popup[0].innerHTML = null;
+    } else{
+        // Clicked outside the box
+    }
+});
+
+function closeModal() {
+    popup[0].style.display = 'none';
+    popup[0].innerHTML = null;
+}
 
 for(let span of introSpan) {
     setInterval(() => {
@@ -93,13 +110,19 @@ function openPanel(index) {
     }, 1000)
     setTimeout(() => {
         card.style.backgroundImage = null;
+        let text = '';
+        techUsed[index].tech.forEach(function (t){
+            text += `<span class="badge">${t}</span>`;
+        })
         card.innerHTML = `
-        <div class="row h-100 position-relative align-items-center m-0">
-        <div class="close-btn"><i class="fas fa-times"></i></div>
-        <div class="col-2"></div>
-        <div class="col-10 p-4">
-        <img src="${bg[index]}" alt="works" class="img-fluid">
+        <div class="h-100 card-popup position-relative p-4 w-100">
+        <div onclick="closeModal()" class="close-btn"><i class="fas fa-times"></i></div>
+        <h6>${workDescription[index]}</h6>
+        <small>Technologies used:</small>
+        <div class="d-flex">
+           ${text}
         </div>
+        <img src="${bg[index]}" alt="works" class="img-fluid shadow-sm">
         </div>
         `;
     }, 2000)

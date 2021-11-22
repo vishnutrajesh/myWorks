@@ -748,6 +748,40 @@ form .form-group button {
   color: white;
 }
 
+.card-popup {
+  animation: fadeIn 0.3s ease-in-out forwards;
+  overflow-x: hidden;
+  overflow-y: auto;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+.card-popup::-webkit-scrollbar {
+  width: 5px;
+}
+.card-popup::-webkit-scrollbar-track {
+  background: transparent;
+}
+.card-popup::-webkit-scrollbar-thumb {
+  background: #110066;
+  border-radius: 10px;
+}
+.card-popup::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.card-popup span.badge {
+  padding: 0.5rem 1rem;
+  background-color: #90CBFB;
+  color: white;
+  margin: 0 0.5rem;
+  border-radius: 1.5rem;
+  margin-bottom: 1rem;
+}
+.card-popup span.badge:first-child {
+  margin-left: 0;
+}
+
 @keyframes popin {
   to {
     top: 0;
