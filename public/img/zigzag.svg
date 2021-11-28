@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1900" height="912" viewBox="0 0 1900 912">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1" data-name="Rectangle 1" width="1900" height="912" transform="translate(1644 1472)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="zigzag" transform="translate(-1644 -1472)">
+    <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path)">
+      <g id="Group_1" data-name="Group 1" transform="translate(2203 -203)">
+        <path id="Path_1" data-name="Path 1" d="M-593.657,1927.417s296.041-187.388,598.381-146.446S510.2,1962.06,798.366,1938.44s574.761-195.261,574.761-195.261" fill="none" stroke="#e9e6f8" stroke-width="2"/>
+        <path id="Path_2" data-name="Path 2" d="M-593.657,1927.417s296.041-187.388,598.381-146.446S510.2,1962.06,798.366,1938.44s574.761-195.261,574.761-195.261l30.054,833.033S1085,2339.848,675.909,2321.667,139.545,2485.3-448.333,2364.091-593.657,1927.417-593.657,1927.417Z" transform="translate(15 45)" fill="#f7f7ff"/>
+      </g>
+    </g>
+    <circle id="Ellipse_1" data-name="Ellipse 1" cx="29" cy="29" r="29" transform="translate(2382 2188)" fill="#4325c3"/>
+  </g>
+</svg>
