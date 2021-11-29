@@ -10,7 +10,12 @@ let techUsed = [
     {tech: ['Javascript', 'Bootstrap', 'SCSS | CSS', 'HTML'], resposive: true},
 ]
 const workDescription = [
-    'Drag and drop image uploader with upload progress bar'
+    'Drag and drop image uploader with upload progress bar',
+    'Singularity coming soon lp with rotating planet',
+    'Covid worls report chart',
+    'Smooth scrolling animated responsive landing page',
+    'Smooth scrolling animated responsive landing page',
+    'Simple mobile application landing page',
 ]
 // const links = nav.getElementsByTagName("a");
 // for (let link of links) {
@@ -44,7 +49,7 @@ let bg = ["./img/drag-n-drop.png",
     "./img/coming-soon-singularity.png",
     "./img/covid-chart.png",
     "./img/scroll-lp.png",
-    "./img/app-lp.png]"];
+    "./img/app-lp.png"];
 
 window.addEventListener('click', function(e){
     if (popup[0] === e.target){
@@ -65,6 +70,10 @@ for(let span of introSpan) {
         span.classList.add('pop');
     }, 300)
 }
+function downloadUrl(){
+    window.open(`./img/resume.pdf`, '_target_blank');
+}
+
 function expand(index) {
     workCard[index].querySelector('.navigate').classList.add('animated');
     if(workCard[index].querySelector('.expand') !== null) {
@@ -115,14 +124,27 @@ function openPanel(index) {
             text += `<span class="badge">${t}</span>`;
         })
         card.innerHTML = `
-        <div class="h-100 card-popup position-relative p-4 w-100">
-        <div onclick="closeModal()" class="close-btn"><i class="fas fa-times"></i></div>
+        <div class="h-100 card-popup position-relative p-2 w-100">
+        <div class="row h-100">
+        <div class="col-11 align-self-end">
+        <figure>
+        <img src="${bg[index]}" alt="works" class="w-100 shadow-sm">
+        <figcaption>
         <h6>${workDescription[index]}</h6>
         <small>Technologies used:</small>
         <div class="d-flex">
            ${text}
         </div>
-        <img src="${bg[index]}" alt="works" class="img-fluid shadow-sm">
+        </figcaption>
+        </figure>
+        </div> 
+        <div class="col-1 m-0 popup-slider d-flex flex-column justify-content-between">
+        <div onclick="closeModal()" class="close-btn"><i class="fas fa-times"></i></div>
+         <div class="navigate shadow-lg">
+          <i class="fas fa-directions"></i>
+         </div>
+         </div>
+        </div>
         </div>
         `;
     }, 2000)
