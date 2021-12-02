@@ -671,7 +671,6 @@ $textcolor: #919191;
   width: 100%;
   height: 100%;
   animation: fadeIn 0.5s ease-in-out forwards;
-
   .work-card {
     background-size: cover;
     background-position: center;
@@ -680,11 +679,8 @@ $textcolor: #919191;
     border-radius: 5rem;
     padding: 2rem;
     transition: all 0.3s cubic-bezier(1, 0.04, 0.58, 1);
-    cursor: pointer;
     box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
-    &:hover {
-      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
-    }
+    overflow: hidden;
   }
 }
 #works{
@@ -723,6 +719,18 @@ form{
       border: none;
       border-radius: 2rem;
       box-shadow: 0 .5rem 1rem rgba(0,0,0,.15)!important;
+      &.invalid{
+        box-shadow: 0 0 15px #db3535  !important;
+        border: 1px solid #db3535 ;
+        &:focus{
+          box-shadow: 0 0 15px #db3535  !important;
+          border: 1px solid #db3535 ;
+        }
+      }
+      &:focus{
+        box-shadow: 0 0 15px $linkColor !important;
+        border: 1px solid $linkColor;
+      }
     }
     button{
       border-radius: 2rem;
@@ -763,8 +771,8 @@ form{
   color: #F01919;
   background-color: #FF9494;
   position: absolute;
-  right: 1rem;
-  top: 1rem;
+  right: 3rem;
+  top: 3rem;
   cursor: pointer;
   border-radius: 50%;
   z-index: 9999999999;
@@ -796,27 +804,39 @@ form{
      position: static;
   }
 }
-.card-popup{
-  animation: fadeIn 0.3s ease-in-out forwards;
-  figure{
-    position: relative;
-    border-radius: 1rem;
-    overflow: hidden;
-    margin: 0;
-    figcaption{
-      width: 100%;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      padding: 1.5rem;
-      background: rgb(255,255,255);
-      background: linear-gradient(180deg, rgba(255,255,255,0.10968137254901966) 0%, rgba(0,0,0,0.5018382352941176) 37%, rgba(0,0,0,1) 100%);
-      color: white;
+.side-bar{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  left: 0;
+  top: 0;
+  padding: 2.5rem 3rem;
+  background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(255,255,255,0.10968137254901966) 0%, rgba(0,0,0,0.5018382352941176) 37%, rgba(0,0,0,1) 100%);
+  color: white;
+  .navigate{
+    cursor: pointer;
+    background-color: #4e62ae;
+    margin-left: auto;
+    color: white;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+      background-color: $primary-color;
     }
   }
   span.badge{
     padding: 0.5rem 1rem;
     background-color: $primary-color;
+    box-shadow: 0px 0px 5px 2px rgb(3 169 244 / 44%);
     color: white;
     margin: 0.5rem 0.5rem;
     border-radius: 1.5rem;
@@ -825,6 +845,10 @@ form{
       margin-left: 0;
     }
   }
+}
+.card-popup{
+  animation: fadeIn 0.3s ease-in-out forwards;
+  overflow: hidden;
 }
 .working-on{
   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='%23333' stroke-width='3' stroke-dasharray='6%2c 14' stroke-dashoffset='23' stroke-linecap='square'/%3e%3c/svg%3e");
@@ -842,5 +866,57 @@ form{
     bottom: 0;
     right: 0;
     opacity: 1;
+  }
+}
+
+.error{
+  padding: 0 1rem;
+  height: 30px;
+  font-size: 12px;
+  align-items: center;
+  background-color: #DB3535;
+  border: 1px solid #DB3535;
+  color: white;
+  position: relative;
+  display: none;
+  margin-left: 1rem;
+  margin-top: -4px;
+  border-radius: 1rem;
+  &.show{
+    display: flex;
+  }
+  &:before{
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 10px 6px 0;
+    border-color: transparent #DB3535 transparent transparent;
+    position: absolute;
+    top: 8px;
+    left: -10px;
+  }
+}
+.svg{
+  left: 15%;
+  bottom: 0;
+  height: 75%;
+  width: 76%;
+  position: absolute;
+  z-index: 9999999;
+  pointer-events: none;
+}
+.loader{
+  height: 35px;
+  width: 50px;
+  display: block;
+  position: relative;
+  .lotte{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
 }
