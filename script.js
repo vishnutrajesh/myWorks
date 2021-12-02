@@ -296,12 +296,11 @@ function submitForm() {
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value;
+    checkValid('name', 'Name')
+    checkValid('email', 'Email')
+    checkValid('message', 'Message')
     if(formValid === true) {
         writeUserData(name, email, message);
-    } else {
-        checkValid('name', 'Name')
-        checkValid('email', 'Email')
-        checkValid('message', 'Message')
     }
 }
 
