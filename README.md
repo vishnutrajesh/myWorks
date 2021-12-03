@@ -1,6 +1,6 @@
 # Deep nested row expansion table
 
-This a component to manage deep nested table view for Dlt ledges trader platform contracts, purchase orders and shipments
+This is a component to manage deeply nested table view for Dlt ledges trader platform contracts, purchase orders, and shipments
 
 ## Component Selector
 ```
@@ -11,7 +11,7 @@ This a component to manage deep nested table view for Dlt ledges trader platform
 
 | Options        | Default Value | Use  |
 | -------------  |:-------------:| :-----|
-| expansion      | false        | to make row expandable |
+| expansion      | false        | To make row expandable |
 | showReDirect   | true         |   To show re-direct button to navigate to contract overview |
 
 ## Table Configuration (tbale three level hierarchy json config)
