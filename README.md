@@ -3,8 +3,9 @@
 This a component to manage deep nested table view for Dlt ledges trader platform contracts, purchase orders and shipments
 
 ## Component Selector
-
+```
 <row-expansion-table></row-expansion-table>
+```
 
 ## Options
 
