@@ -343,11 +343,6 @@ function writeUserData(name, email, message) {
         lotte.classList.remove('d-none');
         successMessage.classList.remove('d-none');
     }, 2000)
-    // set(ref(database, 'portfolio-contact'), {
-    //     username: name,
-    //     email: email,
-    //     message : message
-    // });
 }
 
 function collapse(index) {
