@@ -1,27 +1,92 @@
-# CovidTracker
+# Deep nested row expansion table
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
+This a component to manage deep nested table view for Dlt ledges trader platform contracts, purchase orders and shipments
 
-## Development server
+## Component Selector
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+<row-expansion-table></row-expansion-table>
 
-## Code scaffolding
+## Options
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+| Options        | Default Value | Use  |
+| -------------  |:-------------:| -----:|
+| expansion      | false        | to make row expandable |
+| showReDirect   | true         |   To show ridirect button to navigate to contrcat overview |
 
-## Build
+## Table Configuration (tbale three level hierarchy json config)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+tableConfig = {
+        tableData: this.contractList,
+        parentTable: {
+          th: [
+            'CONTRACT ID',
+            'TYPE',
+            'CONTRACT NAME',
+            'PRODUCT',
+            'PARTNER',
+            'TOTAL AMOUNT',
+            'DATE',
+            'STATUS'
+          ],
+          dataKey: [
+            'contractId',
+            'type',
+            'contractName',
+            'product',
+            'partner',
+            'totalAmount',
+            'date',
+            'status',
+          ],
+          childArrayKey: 'po',
+        },
+        firstChildTable: {
+          th: [
+            'PO ID',
+            'PRODUCT',
+            'QUANTITY',
+            'AMOUNT',
+            'DATE',
+            'CREATED BY',
+            'STATUS'
+          ],
+          dataKey: [
+            'poDetails',
+            'product',
+            'quantity',
+            'amount',
+            'date',
+            'createdBy',
+            'status',
+          ],
+          childArrayKey: 'shipments',
+        },
+        secondChildTable: {
+          th: [
+            'SHIPMENT ID',
+            'PRODUCT',
+            'QUANTITY',
+            'AMOUNT',
+            'DATE',
+            'CREATED BY',
+            'STATUS'
+          ],
+          dataKey: [
+            'shipmentDetails',
+            'product',
+            'quantity',
+            'amount',
+            'date',
+            'createdBy',
+            'status',
+          ],
+        }
+      }
+```
 
-## Running unit tests
+## Table View
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![alt text](https://drive.google.com/file/d/1APb9xdXb-Ejh7NqjI-ypY7_eLFK7T7Dx/view?usp=sharing)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
