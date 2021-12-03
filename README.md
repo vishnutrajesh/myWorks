@@ -9,7 +9,7 @@ This a component to manage deep nested table view for Dlt ledges trader platform
 ## Options
 
 | Options        | Default Value | Use  |
-| -------------  |:-------------:| -----:|
+| -------------  |:-------------:| :-----:|
 | expansion      | false        | to make row expandable |
 | showReDirect   | true         |   To show ridirect button to navigate to contrcat overview |
 
