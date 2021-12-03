@@ -87,7 +87,7 @@ tableConfig = {
 ```
 
 ## Table View
+![row](https://user-images.githubusercontent.com/84440673/144641503-aa26c04b-ce40-4008-b6d1-507dbda2af94.jpg)
 
-![alt text](https://drive.google.com/file/d/1APb9xdXb-Ejh7NqjI-ypY7_eLFK7T7Dx/view?usp=sharing)
 
 
