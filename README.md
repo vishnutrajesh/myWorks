@@ -1,5 +1,5 @@
-# UserManagement
-
+# Users Listing
+This project is a user listing with CRUD operations using https://jsonplaceholder.typicode.com.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
 
 ## Development server
