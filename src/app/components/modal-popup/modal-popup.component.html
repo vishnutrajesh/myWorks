@@ -1,0 +1,77 @@
+
+<div *ngIf="open" class="overlay-popup">
+  <form [formGroup]="userForm">
+    <ng-container [ngSwitch]="userFormAction">
+      <ng-container *ngSwitchCase="'create'">
+        <h3>Create New User</h3>
+      </ng-container>
+      <ng-container *ngSwitchCase="'view'">
+        <h3>User Details</h3>
+      </ng-container>
+      <ng-container *ngSwitchCase="'update'">
+        <h3>Edit User Details</h3>
+      </ng-container>
+      <ng-container *ngSwitchDefault>
+        <h3>User Details</h3>
+      </ng-container>
+    </ng-container>
+  <div class="form-group">
+    <label>Name</label>
+    <input formControlName="name" type="text">
+    <ng-container *ngIf="userControls?.name?.invalid && (userControls?.name?.touched || userControls?.name?.dirty)">
+      <small *ngIf="userControls?.name?.errors?.required">Name is required</small>
+    </ng-container>
+  </div>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input formControlName="email" type="text">
+    <ng-container *ngIf="userControls?.email?.invalid && (userControls?.email?.touched || userControls?.email?.dirty)">
+      <small *ngIf="userControls?.email?.errors?.required">Email is required</small>
+      <small *ngIf="userControls?.email?.errors?.email">Invalid email</small>
+    </ng-container>
+  </div>
+
+  <div class="form-group">
+    <label>Phone</label>
+    <input formControlName="phone" type="text">
+    <ng-container *ngIf="userControls?.phone?.invalid && (userControls?.phone?.touched || userControls?.phone?.dirty)">
+      <small *ngIf="userControls?.phone?.errors?.required">Phone is required</small>
+      <small *ngIf="userControls?.phone?.hasError('minlength')">Must have 10 digits</small>
+      <small *ngIf="userControls?.phone?.hasError('maxlength')">Must not exceed 12 digits</small>
+    </ng-container>
+  </div>
+
+<ng-container formGroupName="address">
+
+  <div class="form-group">
+    <label>City</label>
+    <input formControlName="city" type="text">
+    <ng-container *ngIf="userControls?.address?.get('city')?.invalid && (userControls?.address?.get('city')?.touched || userControls?.address?.get('city')?.dirty)">
+      <small *ngIf="userControls?.address?.get('city')?.errors?.required">Phone is required</small>
+      <small *ngIf="userControls?.address?.get('city')?.errors?.min">Must have 10 digits</small>
+      <small *ngIf="userControls?.address?.get('city')?.errors?.max">Must not exceed 12 digits</small>
+    </ng-container>
+  </div>
+
+  <div class="form-group">
+    <label>Zipcode</label>
+    <input formControlName="zipcode" type="text">
+    <ng-container *ngIf="userControls?.address?.get('zipcode')?.invalid && (userControls?.address?.get('zipcode')?.touched || userControls?.address?.get('zipcode')?.dirty)">
+      <small *ngIf="userControls?.address?.get('zipcode')?.errors?.required">Phone is required</small>
+      <small *ngIf="userControls?.address?.get('zipcode')?.hasError('minlength')">Must have 5 digits</small>
+      <small *ngIf="userControls?.address?.get('zipcode')?.hasError('maxlength')">Must not exceed 10 digits</small>
+    </ng-container>
+     <div class="footer">
+       <button (click)="emitState()" class="close">Close</button>
+       <button [innerText]="userFormAction === 'update' ? 'Save': 'Create'"
+               *ngIf="this.userFormAction !== 'view'"
+               (click)="getUserValue()" type="submit" class="add"></button>
+     </div>
+
+  </div>
+
+</ng-container>
+
+</form>
+</div>

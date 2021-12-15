@@ -1,0 +1,50 @@
+<header>
+  <h4 class="m-0">List of Users</h4>
+  <div class="logo">
+    <img src="./assets/images/logo.jpg" alt="logo">
+  </div>
+</header>
+
+<section class="main-sec">
+  <div class="user-list-container">
+    <div class="top-block">
+      <h4 class="m-0">List of Users</h4>
+      <button (click)="addNewUser()" class="add"><i class="fas fa-plus"></i> Add User</button>
+    </div>
+    <ng-container *ngFor="let list of userList; let i = index; trackBy:identify">
+    <div class="user-list">
+      <div class="avatar">
+         <span appNameShortner [text]="list.name"></span>
+      </div>
+
+      <div class="details">
+        <small>Name</small>
+        <h4>{{list.name}}</h4>
+        <a [href]="'mailto:' + list.email">{{list.email}}</a>
+      </div>
+
+      <div class="details">
+        <small>Company</small>
+        <h4>{{list.company.name}}</h4>
+        <a target="_blank" [href]="list.website">{{list.website}}</a>
+      </div>
+
+      <div class="details">
+        <small>Phone</small>
+        <h4>{{list.phone}}</h4>
+        <a [href]="'tel:' + list.phone">{{list.phone}}</a>
+      </div>
+
+      <div class="action">
+        <button (click)="select(list, 'view')" class="add"><i class="far fa-eye"></i></button>
+        <button (click)="select(list, 'update')" class="update"><i class="fas fa-user-edit"></i></button>
+        <button (click)="deletedUser(list.id, i)" class="delete"><i class="fas fa-trash"></i></button>
+      </div>
+
+    </div>
+    </ng-container>
+  </div>
+</section>
+
+
+<app-modal-popup [userDetails]="selectedUser" (formValues)="getFormValues($event)" (modalState)="this.openModal = $event" [open]="openModal"></app-modal-popup>
