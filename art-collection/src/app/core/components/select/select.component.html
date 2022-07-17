@@ -1,0 +1,27 @@
+<div class="select">
+  <input [(ngModel)]="selectValue" (focus)="openDropdown()" placeholder="{{placeHolder}}" class="form-select" type="text">
+  <ul *ngIf="showDropdown" class="select-dropdown bg-white shadow border-3">
+    <li *ngFor="let item of items; let i = index">
+      <ng-container *ngIf="multi; else normalDropdown">
+        <a class="dropdown-item">
+          <div class="form-check">
+        <input #checkBox (click)="multiValueChange(item, checkBox)" class="form-check-input"
+               type="checkbox" name="{{item[bindValue]}}" id="check{{i}}" value="{{item[bindValue]}}" [ngModel]="item.checked">
+        <label class="form-check-label" for="check{{i}}">
+          <ng-container *ngFor="let label of bindLabel">
+            {{item[label]}}
+          </ng-container>
+        </label>
+          </div>
+        </a>
+      </ng-container>
+      <ng-template #normalDropdown>
+        <a (click)="setValue($event, item)" class="dropdown-item" href="#">
+          <ng-container *ngFor="let label of bindLabel">
+            {{item[label]}}
+          </ng-container>
+        </a>
+      </ng-template>
+    </li>
+  </ul>
+</div>

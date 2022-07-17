@@ -1,0 +1,24 @@
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li [ngClass]="{'active': currentPage === 1}" class="page-item">
+      <a href="#" (click)="changePage($event, 1)" class="page-link"><<</a>
+    </li>
+    <li [ngClass]="{'disabled': currentPage <= 1}" class="page-item">
+      <a href="#" (click)="changePage($event, currentPage - 1)" class="page-link"><</a>
+    </li>
+    <ng-container *ngFor="let pageNo of linkSizeArray">
+      <li [ngClass]="{'active': currentPage === pageNo}" class="page-item"><a (click)="changePage($event, pageNo)" class="page-link" href="#">{{pageNo}}</a></li>
+    </ng-container>
+    <ng-container *ngFor="let dot of [1,2,3]">
+      <li class="page-item"><a class="page-link">.</a></li>
+    </ng-container>
+    <li [ngClass]="{'active': currentPage === totalRecords - 1}" class="page-item"><a (click)="changePage($event, totalRecords - 1)" class="page-link" href="#">{{totalRecords - 1}}</a></li>
+    <li [ngClass]="{'active': currentPage === totalRecords}" class="page-item"><a (click)="changePage($event, totalRecords)" class="page-link" href="#">{{totalRecords}}</a></li>
+    <li [ngClass]="{'disabled': currentPage === totalRecords}" class="page-item">
+      <a (click)="changePage($event, currentPage + 1)" class="page-link" href="#">></a>
+    </li>
+    <li [ngClass]="{'active': currentPage === totalRecords}" class="page-item">
+      <a (click)="changePage($event, totalRecords)" class="page-link" href="#">>></a>
+    </li>
+  </ul>
+</nav>
