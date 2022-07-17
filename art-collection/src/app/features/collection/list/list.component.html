@@ -20,7 +20,7 @@
     <hr class="mt-4">
   </div>
   <div class="row">
-    <div *ngFor="let list of artCollectionList; trackBy: listTrackBy"  class="col-xl-3 align-self-stretch">
+    <div *ngFor="let list of artCollectionList; trackBy: listTrackBy"  class="col-xl-3 col-lg-3 col-md-4 align-self-stretch">
       <div class="card">
         <figure [style.background-position-y]="!list.image_id ? 'bottom': 'center'" [style.background-image]="imageUrl | urlTransform: list?.image_id">
         </figure>
