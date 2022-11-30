@@ -10,7 +10,6 @@ export class PostComponent implements OnInit {
   @Input() set posts(data: any) {
     if(data) {
       this.postData = data;
-      console.log(this.postData);
     }
   }
   constructor() { }

@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f1759e1e-e73c-4aed-8a98-2cea4874d6cc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insta-feed/src/app/core/components/global-loader/global-loader.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/insta-feed/src/app/core/components/global-loader/global-loader.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insta-feed/src/app/core/components/global-loader/global-loader.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/insta-feed/src/app/core/components/global-loader/global-loader.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insta-feed/src/app/core/components/post/post.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/insta-feed/src/app/core/components/post/post.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/insta-feed/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/insta-feed/src/styles.scss" afterDir="false" />
-    </list>
+    <list default="true" id="f1759e1e-e73c-4aed-8a98-2cea4874d6cc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,7 +23,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/virajesh/Desktop/machine_test/myWorks/art-collection/src/assets/images",
+    "last_opened_file_path": "C:/Users/virajesh/Desktop/machine_test/myWorks/insta-feed",
     "nodejs_package_manager_path": "npm",
     "ts.external.directory.path": "C:\\Users\\virajesh\\Desktop\\machine_test\\myWorks\\insta-feed\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -49,7 +43,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669780359399</updated>
       <workItem from="1669780361470" duration="16970000" />
-      <workItem from="1669797728652" duration="986000" />
+      <workItem from="1669797728652" duration="1296000" />
     </task>
     <servers />
   </component>

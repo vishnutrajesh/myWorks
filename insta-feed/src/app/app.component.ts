@@ -39,7 +39,7 @@ export class AppComponent implements OnInit{
   navigatePage($event: any) {
     let pos = this.scrollView?.nativeElement.scrollTop + this.scrollView?.nativeElement.offsetHeight;
     let max = this.scrollView?.nativeElement.scrollHeight;
-    if(pos === max || pos >= max )   {
+    if(pos === max || pos >= max - 10 )   {
       if (this.scrollView?.nativeElement?.scrollTop) {
         this.scrollView.nativeElement.scrollTop = 0;
       }

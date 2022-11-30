@@ -8,6 +8,9 @@
       </div>
     </ng-container>
     <ng-template #data>
+      <ng-container *ngIf="articles.length === 0">
+        <h3>No items found on page {{page}}</h3>
+      </ng-container>
       <ng-container *ngFor="let post of articles">
         <app-post [posts]="post"></app-post>
       </ng-container>
