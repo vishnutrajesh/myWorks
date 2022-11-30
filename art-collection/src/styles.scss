@@ -7,9 +7,14 @@ $primary-color: #4462EB;
 html, body{
   padding: 0;
   margin: 0;
-  height: 100%;
+  height: 600px;
   width: 100%;
   overflow-x: hidden;
+}
+.ui-container{
+  width: 400px;
+  height: 600px;
+  overflow-y: auto;
 }
 .avatar.p-avatar{
   width: 25px;

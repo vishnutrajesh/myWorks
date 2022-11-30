@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent implements OnInit {
-  postData: any = [];
+  postData: any;
   @Input() set posts(data: any) {
     if(data) {
       this.postData = data;
@@ -18,4 +18,8 @@ export class PostComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  showMore(title: HTMLParagraphElement, button: HTMLSpanElement) {
+    title.style.display = 'block';
+    button.style.display = 'none';
+  }
 }
