@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {PageNotFoundComponent} from "./core/components/page-not-found/page-not-found.component";
+import {AppComponent} from "./app.component";
 
 const routes: Routes = [
-  /* Lazy loaded route for listing */
   {
-    path: "collections", loadChildren: () => import('./features/collection/collection.module').then(m => m.CollectionModule)
-  },
-  {
-    path: "", redirectTo: "collections", pathMatch: "full"
+    path: '', component: AppComponent
   },
   /* Wildcard Route */
   {

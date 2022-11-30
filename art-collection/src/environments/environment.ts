@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseURI: 'https://api.artic.edu/api/v1/artworks'
+  baseURI: 'https://newsapi.org/v2/top-headlines?country=us&apiKey=a0a628198ae3478bbf4596c25e2f69c5'
 };
 
 /*

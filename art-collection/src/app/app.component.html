@@ -1,3 +1,6 @@
 <app-global-loader *ngIf="(loaderObservable$ | async)"></app-global-loader>
-<app-nav></app-nav>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+  <div class="me-auto ms-auto">
+    <app-post class="d-block m-auto" style="width: 400px" [posts]="articles"></app-post>
+  </div>
+</div>

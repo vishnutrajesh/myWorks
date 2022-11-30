@@ -3,24 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavComponent } from './core/components/nav/nav.component';
+import { PostComponent } from './core/components/post/post.component';
 import { PageNotFoundComponent } from './core/components/page-not-found/page-not-found.component';
-import {CollectionModule} from "./features/collection/collection.module";
 import { GlobalLoaderComponent } from './core/components/global-loader/global-loader.component';
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {LoaderInterceptor} from "./core/interceptor/loader.interceptor";
+import {CarouselModule} from "primeng/carousel";
+import {AvatarModule} from "primeng/avatar";
+import {AvatarGroupModule} from "primeng/avatargroup";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent,
+    PostComponent,
     PageNotFoundComponent,
     GlobalLoaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CollectionModule
+    HttpClientModule,
+    CarouselModule,
+    AvatarModule,
+    AvatarGroupModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true}

@@ -1,0 +1,36 @@
+.post-header{
+  a{
+    color: gray;
+  }
+  h5{
+    font-size: 15px;
+    margin-left: 0.5rem;
+  }
+}
+.response{
+  .pi{
+    font-size: 1rem;
+  }
+}
+.dot{
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 3px;
+  &.active{
+    background-color: #4462EB;
+  }
+}
+.interactive-sec{
+  height: 30px;
+  p{
+    color: gray;
+    margin-left: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    b{
+      color: black;
+    }
+  }
+}

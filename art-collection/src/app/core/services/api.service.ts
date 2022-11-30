@@ -10,7 +10,7 @@ export class ApiService {
   url: string = environment.baseURI; /* base url */
   constructor(private http: HttpClient) { }
   /* API Request function */
-  getArtCollections(params: any): Observable<any> {
+  getPosts(params: any): Observable<any> {
     return this.http.get(this.url, {params: params})
   }
 }

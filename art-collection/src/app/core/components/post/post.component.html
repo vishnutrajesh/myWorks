@@ -1,0 +1,48 @@
+<!--{{postData | json}}-->
+<ng-container *ngFor="let post of postData">
+<div class="post-header pt-2 pb-2 d-flex justify-content-between">
+  <div class="d-flex align-items-center">
+    <p-avatar image="../../../../assets/images/avatar2.jpg" styleClass="mr-2" shape="circle"></p-avatar>
+    <h5>{{post?.author}}</h5>
+  </div>
+  <a href="javscript:void(0)"><i class="pi pi-ellipsis-v"></i></a>
+</div>
+<div class="w-100">
+<!--  <p-carousel styleClass="w-100" [value]="postData" [numVisible]="3" [numScroll]="1">-->
+<!--    <ng-template let-data pTemplate="item">-->
+<!--      <img class="img-fluid" src="{{data?.urlToImage}}" alt="img">-->
+<!--    </ng-template>-->
+<!--  </p-carousel>-->
+  <img class="img-fluid" src="{{post?.urlToImage}}" alt="img">
+</div>
+  <div class="post-activity d-flex align-items-center justify-content-between pt-2 pb-1">
+    <div class="response align-items-center d-flex justify-content-around col-3">
+      <i class="pi pi-heart"></i>
+      <i class="pi pi-comment"></i>
+      <i class="pi pi-send"></i>
+    </div>
+    <div class="col-6">
+      <div class="d-flex justify-content-center">
+      <ng-container *ngFor="let dot of [1,2,3,4]">
+        <span [ngClass]="{'active shadow': dot === 1}" class="dot"></span>
+      </ng-container>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end col-3">
+      <div class="pe-2">
+        <i class="pi pi-bookmark"></i>
+      </div>
+    </div>
+  </div>
+  <div class="interactive-sec d-flex">
+    <p-avatarGroup styleClass="mb-3">
+      <p-avatar styleClass="avatar" image="../../../../assets/images/avtar1.jpg" size="small" shape="circle"></p-avatar>
+      <p-avatar styleClass="avatar" image="../../../../assets/images/avatar2.jpg" size="small" shape="circle"></p-avatar>
+      <p-avatar styleClass="avatar" image="../../../../assets/images/avatar3.jpg" size="small" shape="circle"></p-avatar>
+    </p-avatarGroup>
+    <p>Liked by <b>Neeraj</b> and <b>4234 others</b></p>
+  </div>
+  <div class="description">
+    <p class="m-0">{{post?.title}}</p>
+  </div>
+</ng-container>
