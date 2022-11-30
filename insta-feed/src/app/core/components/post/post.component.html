@@ -43,6 +43,8 @@
     <p>Liked by <b>Neeraj</b> and <b>4234 others</b></p>
   </div>
   <div class="description">
-    <p #title class="m-0 position-relative hide">{{postData?.title}} <span #moreBtn (click)="showMore(title, moreBtn)" *ngIf="postData?.title?.length > 100">...more</span></p>
+    <p #title class="m-0 position-relative hide">{{postData?.title}} <span #moreBtn (click)="showMore(title, moreBtn)"
+    *ngIf="postData?.title?.length > 100">...more</span></p>
+    <small>View all 457 comments</small>
   </div>
   </div>
