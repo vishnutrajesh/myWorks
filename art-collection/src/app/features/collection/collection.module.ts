@@ -11,17 +11,22 @@ import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
-  declarations: [
-    ListComponent,
-    ImageUrlPipe,
+    declarations: [
+        ListComponent,
+        ImageUrlPipe,
+        PaginatorComponent,
+        SelectComponent
+    ],
+  exports: [
     PaginatorComponent,
-    SelectComponent
+    ListComponent,
+    ImageUrlPipe
   ],
-  imports: [
-    CommonModule,
-    CollectionRoutingModule,
-    HttpClientModule,
-    FormsModule
-  ]
+    imports: [
+        CommonModule,
+        CollectionRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ]
 })
 export class CollectionModule { }

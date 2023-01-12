@@ -1,15 +1,16 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ApiService} from "../../../core/services/api.service";
-import {Subscription} from "rxjs";
+import { Component, OnInit } from '@angular/core';
 import {ArtCollection} from "../../../core/interface/art-collection";
-import {Router} from "@angular/router";
+import {of, Subscription, switchMap} from "rxjs";
+import {ApiService} from "../../../core/services/api.service";
+import {ActivatedRoute, Router} from "@angular/router";
+import {TransferStateService} from "@scullyio/ng-lib";
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  selector: 'app-list-page',
+  templateUrl: './list-page.component.html',
+  styleUrls: ['./list-page.component.scss']
 })
-export class ListComponent implements OnInit, OnDestroy {
+export class ListPageComponent implements OnInit {
   /* API Params for filter data */
   filterKeys: string[] = ['id','title','date_start','date_end','place_of_origin','image_id','artist_title','style_titles','style_title','material_titles'];
   page: number = 1;
@@ -27,35 +28,32 @@ export class ListComponent implements OnInit, OnDestroy {
   ]
   styleFilter: any;
   sort: any;
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute,
+              private tss: TransferStateService) { }
 
   ngOnInit(): void {
-    this.getCollectionList();
+    this.activatedRoute.params.subscribe((x: any) => {
+      this.page =  x['no'];
+      this.getCollectionList();
+    })
   }
-/* Method for getting data from API */
+  /* Method for getting data from API */
   getCollectionList(paginate?: boolean) {
     const params: any = {
       fields: this.filterKeys.join(','),
       page: this.page,
       limit: this.size
     }
-    this.apiSubscription = this.apiService.getArtCollections(params, paginate).subscribe((list: any) => {
+    this.tss.useScullyTransferState('getAllPages', of(100).pipe(
+      switchMap((page) => this.apiService.getArtCollections({page: page, ...params}))
+    )).subscribe((list: any) => {
       this.imageUrl = list.config.iiif_url;
       this.totalCount = list.pagination.total_pages;
       this.artCollectionList = list.data;
       this.artCollectionRef = list.data;
-      let arr: any = [];
-      this.artCollectionList.forEach((titles: any) => {
-        if(titles['style_title']) {
-          arr.push({title: titles['style_title'], count: `(${this.artCollectionRef.filter((x: any) => x['style_titles'].includes(titles['style_title'])).length})`})
-        }
-      })
-      this.styleTitles = arr.filter((elem: any, index: number, self: any) => self.findIndex(
-        (t: any) => {return (t['title'] === elem['title'] && t['count'] === elem['count'])}) === index);
-      if(this.sort) {
-        this.sortBy({value: this.sort})
-      }
-    })
+    });
   }
 
   ngOnDestroy(): void {
@@ -64,17 +62,17 @@ export class ListComponent implements OnInit, OnDestroy {
       this.apiSubscription.unsubscribe();
     }
   }
-/* trackBy for performance optimization */
+  /* trackBy for performance optimization */
   listTrackBy(index: number, item: any) {
     return item.id;
   }
-/* Paginator function */
+  /* Paginator function */
   navigateToPage($event: any) {
     this.page = $event.page;
     this.styleFilter = null;
     this.router.navigate([`/page/${this.page}`])
   }
-/* Function to filter */
+  /* Function to filter */
   filterList($event: any) {
     if($event.value instanceof Array) {
       let arr:any = [];
@@ -93,7 +91,7 @@ export class ListComponent implements OnInit, OnDestroy {
       this.sortBy({value: this.sort})
     }
   }
-/* Function to sort */
+  /* Function to sort */
   sortBy($event: any) {
     if($event.value === 'date_start') {
       this.artCollectionList = this.artCollectionList.sort((a: any, b: any) => a[$event.value] - b[$event.value])
@@ -104,5 +102,9 @@ export class ListComponent implements OnInit, OnDestroy {
         return 0;
       })
     }
+  }
+
+  navigateToDetails(id: any) {
+    this.router.navigate([`art/${id}`])
   }
 }

@@ -9,18 +9,26 @@ import {CollectionModule} from "./features/collection/collection.module";
 import { GlobalLoaderComponent } from './core/components/global-loader/global-loader.component';
 import {HTTP_INTERCEPTORS} from "@angular/common/http";
 import {LoaderInterceptor} from "./core/interceptor/loader.interceptor";
+import { ScullyLibModule } from '@scullyio/ng-lib';
+import {ListPageComponent} from "./features/collection/list-page/list-page.component";
+import { ArtDetailsComponent } from './art-details/art-details.component';
+import { ProtectedComponent } from './protected/protected.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     PageNotFoundComponent,
-    GlobalLoaderComponent
+    GlobalLoaderComponent,
+    ListPageComponent,
+    ArtDetailsComponent,
+    ProtectedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CollectionModule
+    CollectionModule,
+    ScullyLibModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true}

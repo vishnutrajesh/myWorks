@@ -1,0 +1,28 @@
+<div class="card">
+  <figure [style.background-position-y]="!list?.image_id ? 'bottom': 'center'" [style.background-image]="list?.image_id ? (imageUrl | urlTransform: list?.image_id): null">
+  </figure>
+  <div class="card-body">
+    <h5 class="card-title">{{list.title}}</h5>
+    <b class="d-block">{{list.artist_title}}</b>
+    <ng-container *ngIf="list.date_start && list.date_end; else showLocation">
+      <ng-container *ngIf="list.date_start === list.date_end; else showLocationWithYear">
+        <small class="d-block">{{list.place_of_origin}} ({{list.date_start}})</small>
+      </ng-container>
+      <ng-template #showLocationWithYear>
+        <small class="d-block">{{list.place_of_origin}} ({{list.date_start}} - {{list.date_end}})</small>
+      </ng-template>
+    </ng-container>
+    <ng-template #showLocation>
+      <small class="d-block">{{list.place_of_origin}}</small>
+    </ng-template>
+    <hr>
+    <ng-container *ngIf="list.material_titles">
+      <h6>
+        <ng-container *ngFor="let material of list.material_titles; let j = index">
+          <small class="fst-italic border-dark pe-2" [ngClass]="{'border-start ps-2': j > 0 && j !== list.material_titles.length}">{{material}}</small>
+        </ng-container>
+      </h6>
+    </ng-container>
+    <button (click)="testFn()" class="btn btn-primary">Click</button>
+  </div>
+</div>
